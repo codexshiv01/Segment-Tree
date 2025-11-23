@@ -174,7 +174,15 @@ const HldWorkspace = () => {
             });
         } catch (error) {
             console.error('Analysis error:', error);
-            alert(`Failed to get AI feedback: ${error.message}`);
+            if (error.message.includes('token') || error.message.includes('auth') || error.message.includes('401') || error.message.includes('403')) {
+                alert('Your session has expired. Please login again.');
+                // User requested to keep token in local storage
+                // localStorage.removeItem('token');
+                // localStorage.removeItem('user');
+                navigate('/login');
+            } else {
+                alert(`Failed to get AI feedback: ${error.message}`);
+            }
         }
     };
 
