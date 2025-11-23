@@ -1,0 +1,31 @@
+{
+    "name": "segment-tree-server",
+    "version": "1.0.0",
+    "description": "Backend server for Segment Tree interview preparation platform",
+    "main": "src/server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js"
+    },
+    "keywords": [
+        "interview",
+        "preparation",
+        "system-design"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "groq-sdk": "^0.36.0",
+        "jsonwebtoken": "^9.0.2",
+        "node-fetch": "^3.3.2",
+        "pg": "^8.11.3"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}

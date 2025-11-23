@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, PlayCircle, Database, Code, Cpu, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Database, Code, Cpu, Globe } from 'lucide-react';
 import heroTreeModern from '../assets/hero_tree_modern.png';
 
 const Hero = () => {
@@ -56,11 +57,11 @@ const Hero = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-                    <button className="px-12 py-6 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group relative overflow-hidden">
+                    <Link to="/register" className="px-12 py-6 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold text-xl shadow-2xl hover:shadow-primary/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group relative overflow-hidden">
                         <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-700 ease-in-out skew-x-12 -translate-x-full" />
                         Start Learning Free
                         <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
 
                 <div className="flex flex-col items-center gap-4 text-sm text-slate-500">
