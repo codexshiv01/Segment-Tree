@@ -1814,5 +1814,1957 @@ export const hldProblems = [
             "Storage Service",
             "Database"
         ]
+    },
+    {
+        title: "Design a Unique ID Generator (Snowflake)",
+        slug: "design-unique-id-generator",
+        description: "Design a distributed unique ID generator like Twitter Snowflake that generates unique, time-sortable IDs.",
+        difficulty: "Medium",
+        companies: ["Twitter", "Discord", "Instagram"],
+        functional_requirements: [
+            "Generate unique IDs.",
+            "IDs should be sortable by time.",
+            "IDs should be 64-bit numeric.",
+            "High availability and low latency."
+        ],
+        non_functional_requirements: [
+            "Availability: 99.999% uptime.",
+            "Latency: ID generation in microseconds.",
+            "Scalability: Handle thousands of ID requests per second."
+        ],
+        expected_components: [
+            "ID Generation Service",
+            "Zookeeper (Worker ID assignment)",
+            "NTP (Time synchronization)"
+        ]
+    },
+    {
+        title: "Design a Web Search Engine (Google Search)",
+        slug: "design-web-search-engine",
+        description: "Design a scalable web search engine that indexes the web and serves relevant search results.",
+        difficulty: "Hard",
+        companies: ["Google", "Microsoft", "Amazon"],
+        functional_requirements: [
+            "Crawl the web.",
+            "Index web pages.",
+            "Serve search results based on query relevance.",
+            "Support typeahead suggestions."
+        ],
+        non_functional_requirements: [
+            "Scalability: Index billions of pages.",
+            "Latency: Search results in < 200ms.",
+            "Availability: High availability.",
+            "Freshness: Frequent updates to index."
+        ],
+        expected_components: [
+            "Crawler",
+            "Indexer",
+            "PageRank Algorithm",
+            "Searcher / Query Processor",
+            "Document Store (BigTable)",
+            "Cache"
+        ]
+    },
+    {
+        title: "Design a Distributed Cache (Redis)",
+        slug: "design-distributed-cache",
+        description: "Design a distributed caching system like Redis or Memcached.",
+        difficulty: "Hard",
+        companies: ["Amazon", "Microsoft", "Facebook"],
+        functional_requirements: [
+            "Put(key, value) and Get(key) operations.",
+            "TTL (Time To Live) support.",
+            "Eviction policies (LRU, LFU).",
+            "Data persistence (optional)."
+        ],
+        non_functional_requirements: [
+            "Latency: Sub-millisecond read/write.",
+            "Scalability: Horizontal scaling via sharding.",
+            "Availability: High availability.",
+            "Consistency: Eventual or Strong depending on config."
+        ],
+        expected_components: [
+            "Cache Nodes",
+            "Consistent Hashing Ring",
+            "Proxy / Client Library",
+            "Gossip Protocol",
+            "Persistence Manager"
+        ]
+    },
+    {
+        title: "Design a Message Queue (Kafka)",
+        slug: "design-message-queue",
+        description: "Design a distributed message queue like Apache Kafka or RabbitMQ.",
+        difficulty: "Hard",
+        companies: ["LinkedIn", "Uber", "Confluent"],
+        functional_requirements: [
+            "Publish messages to topics.",
+            "Subscribe to topics.",
+            "Message persistence.",
+            "Message ordering within a partition.",
+            "At-least-once or exactly-once delivery."
+        ],
+        non_functional_requirements: [
+            "Throughput: Handle millions of messages per second.",
+            "Latency: Low latency delivery.",
+            "Scalability: Scale topics and partitions.",
+            "Durability: No message loss."
+        ],
+        expected_components: [
+            "Broker",
+            "ZooKeeper / Controller",
+            "Producer API",
+            "Consumer API",
+            "Log Storage",
+            "Replication Manager"
+        ]
+    },
+    {
+        title: "Design a Live Streaming Platform (Twitch)",
+        slug: "design-live-streaming",
+        description: "Design a live video streaming platform like Twitch or YouTube Live.",
+        difficulty: "Hard",
+        companies: ["Amazon", "Google", "Facebook"],
+        functional_requirements: [
+            "Streamers can broadcast live video.",
+            "Viewers can watch live streams.",
+            "Live chat.",
+            "Record streams for VOD.",
+            "Support different resolutions (ABR)."
+        ],
+        non_functional_requirements: [
+            "Latency: Low latency (seconds).",
+            "Scalability: Handle millions of concurrent viewers.",
+            "Availability: High availability.",
+            "Reliability: Smooth playback."
+        ],
+        expected_components: [
+            "Ingest Server (RTMP)",
+            "Transcoder (FFmpeg)",
+            "CDN",
+            "Chat Service",
+            "Metadata Database",
+            "Protocol Converter (HLS/DASH)"
+        ]
+    },
+    {
+        title: "Design a Collaborative Whiteboard (Miro)",
+        slug: "design-collaborative-whiteboard",
+        description: "Design a real-time collaborative whiteboard like Miro or Excalidraw.",
+        difficulty: "Hard",
+        companies: ["Adobe", "Microsoft", "Google"],
+        functional_requirements: [
+            "Draw shapes, text, lines.",
+            "Multiple users edit simultaneously.",
+            "Real-time updates.",
+            "Undo/Redo support.",
+            "Save board state."
+        ],
+        non_functional_requirements: [
+            "Latency: Real-time sync (< 100ms).",
+            "Consistency: Conflict resolution.",
+            "Scalability: Support many users per board.",
+            "Reliability: No data loss."
+        ],
+        expected_components: [
+            "WebSocket Gateway",
+            "Canvas State Service",
+            "CRDT / OT Engine",
+            "Snapshot Service",
+            "Redis Pub/Sub",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Feature Flag Management System",
+        slug: "design-feature-flag",
+        description: "Design a system to manage feature toggles for gradual rollouts and A/B testing.",
+        difficulty: "Medium",
+        companies: ["Facebook", "Google", "Netflix"],
+        functional_requirements: [
+            "Create and update feature flags.",
+            "Evaluate flags for users (Boolean, Multivariate).",
+            "Target specific user segments.",
+            "Audit logs for flag changes.",
+            "SDKs for different languages."
+        ],
+        non_functional_requirements: [
+            "Latency: Extremely low latency evaluation.",
+            "Availability: 100% availability (fallback to defaults).",
+            "Scalability: Handle billions of evaluations.",
+            "Consistency: Fast propagation of updates."
+        ],
+        expected_components: [
+            "Management Dashboard",
+            "Evaluation Service",
+            "Configuration Distribution (CDN/Edge)",
+            "Client SDK (Local evaluation)",
+            "Database",
+            "Audit Service"
+        ]
+    },
+    {
+        title: "Design a Distributed Tracing System (Jaeger)",
+        slug: "design-distributed-tracing",
+        description: "Design a distributed tracing system to monitor microservices architecture.",
+        difficulty: "Hard",
+        companies: ["Uber", "Google", "Datadog"],
+        functional_requirements: [
+            "Collect traces from services.",
+            "Visualize call graphs (Spans).",
+            "Search traces by tags/latency.",
+            "Analyze dependencies.",
+            "Identify bottlenecks."
+        ],
+        non_functional_requirements: [
+            "Throughput: Handle massive trace volume.",
+            "Overhead: Minimal impact on application performance.",
+            "Scalability: Store petabytes of trace data.",
+            "Latency: Near real-time availability."
+        ],
+        expected_components: [
+            "Trace Agent / Collector",
+            "Ingestion Pipeline (Kafka)",
+            "Storage Backend (Cassandra/Elasticsearch)",
+            "Query Service",
+            "UI Dashboard",
+            "Sampler"
+        ]
+    },
+    {
+        title: "Design a Crash Reporting System (Sentry)",
+        slug: "design-crash-reporting",
+        description: "Design a system to collect and analyze application crashes and errors.",
+        difficulty: "Medium",
+        companies: ["Microsoft", "Google", "Meta"],
+        functional_requirements: [
+            "Capture crash reports/stack traces.",
+            "Group similar crashes.",
+            "Alert developers.",
+            "Filter and search crashes.",
+            "Symbolication of stack traces."
+        ],
+        non_functional_requirements: [
+            "Throughput: Handle bursty traffic during outages.",
+            "Reliability: No report loss.",
+            "Scalability: Scale with user base.",
+            "Security: PII scrubbing."
+        ],
+        expected_components: [
+            "Ingestion API",
+            "Processing Worker",
+            "Symbolication Service",
+            "Grouping Engine",
+            "Database (ClickHouse/Postgres)",
+            "Notification Service"
+        ]
+    },
+    {
+        title: "Design a CI/CD Pipeline Service",
+        slug: "design-cicd-pipeline",
+        description: "Design a continuous integration and deployment service like Jenkins or GitHub Actions.",
+        difficulty: "Hard",
+        companies: ["Google", "Netflix", "Amazon"],
+        functional_requirements: [
+            "Trigger builds on code commit.",
+            "Run tests and linting.",
+            "Build artifacts (Docker images, binaries).",
+            "Deploy to environments.",
+            "Pipeline visualization."
+        ],
+        non_functional_requirements: [
+            "Isolation: Secure build environments.",
+            "Scalability: Concurrent builds.",
+            "Reliability: Accurate build status.",
+            "Performance: Fast build times (Caching)."
+        ],
+        expected_components: [
+            "Workflow Orchestrator",
+            "Build Agents / Runners",
+            "Artifact Repository",
+            "Log Service",
+            "Trigger Service (Webhooks)",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Digital Signature Service (DocuSign)",
+        slug: "design-digital-signature",
+        description: "Design a service for secure digital document signing.",
+        difficulty: "Medium",
+        companies: ["Adobe", "Google", "Microsoft"],
+        functional_requirements: [
+            "Upload documents.",
+            "Add signature fields.",
+            "Send for signing via email.",
+            "Sign documents securely.",
+            "Audit trail."
+        ],
+        non_functional_requirements: [
+            "Security: Non-repudiation and encryption.",
+            "Compliance: Legal standards (eIDAS).",
+            "Availability: High availability.",
+            "Reliability: Document integrity."
+        ],
+        expected_components: [
+            "Document Service",
+            "Signing Service (PKI)",
+            "Notification Service",
+            "Audit Log Service",
+            "Storage (S3)",
+            "Identity Verification"
+        ]
+    },
+    {
+        title: "Design a Virtual Waiting Room",
+        slug: "design-virtual-waiting-room",
+        description: "Design a system to manage traffic surges by placing users in a queue.",
+        difficulty: "Medium",
+        companies: ["Ticketmaster", "Amazon", "Cloudflare"],
+        functional_requirements: [
+            "Intercept traffic to protected pages.",
+            "Assign queue position to users.",
+            "Redirect users when it's their turn.",
+            "Estimate wait time.",
+            "Fairness (FIFO)."
+        ],
+        non_functional_requirements: [
+            "Scalability: Handle millions of users in queue.",
+            "Latency: Minimal overhead for passed traffic.",
+            "Availability: High availability.",
+            "Security: Prevent queue jumping."
+        ],
+        expected_components: [
+            "Edge Proxy / Load Balancer",
+            "Queue Service",
+            "Token/Ticket Service",
+            "State Store (Redis)",
+            "Client Polling / WebSocket",
+            "Configuration Service"
+        ]
+    },
+    {
+        title: "Design a Real-time Ad Bidding System",
+        slug: "design-ad-bidding",
+        description: "Design a Real-Time Bidding (RTB) system for programmatic advertising.",
+        difficulty: "Hard",
+        companies: ["Google", "Meta", "The Trade Desk"],
+        functional_requirements: [
+            "Receive bid requests from SSPs.",
+            "Select best ad to bid.",
+            "Submit bid within deadline.",
+            "Budget pacing.",
+            "Click/Conversion tracking."
+        ],
+        non_functional_requirements: [
+            "Latency: Strict SLA (< 100ms total).",
+            "Throughput: Millions of QPS.",
+            "Availability: High availability.",
+            "Consistency: Accurate budget tracking."
+        ],
+        expected_components: [
+            "Bidder Service",
+            "Budget Service",
+            "Ad Index / Retrieval",
+            "User Profile Store",
+            "Prediction Engine (CTR/CVR)",
+            "Data Pipeline"
+        ]
+    },
+    {
+        title: "Design a Price Comparison Engine",
+        slug: "design-price-comparison",
+        description: "Design a system that scrapes and compares prices from multiple e-commerce sites.",
+        difficulty: "Medium",
+        companies: ["Amazon", "Google", "Expedia"],
+        functional_requirements: [
+            "Crawl e-commerce sites for product prices.",
+            "Normalize and match products.",
+            "Display price history.",
+            "Alert users on price drops.",
+            "Search products."
+        ],
+        non_functional_requirements: [
+            "Freshness: Prices must be up-to-date.",
+            "Scalability: Track millions of products.",
+            "Accuracy: Correct product matching.",
+            "Politeness: Respect crawl limits."
+        ],
+        expected_components: [
+            "Crawler / Scraper",
+            "Product Matcher (ML)",
+            "Price History Database",
+            "Alert Service",
+            "Search Engine",
+            "Proxy Manager"
+        ]
+    },
+    {
+        title: "Design a Translation Service (Google Translate)",
+        slug: "design-translation-service",
+        description: "Design a scalable machine translation service.",
+        difficulty: "Medium",
+        companies: ["Google", "Microsoft", "Meta"],
+        functional_requirements: [
+            "Translate text between languages.",
+            "Detect source language.",
+            "Support document translation.",
+            "Voice translation (optional).",
+            "Crowdsourced corrections."
+        ],
+        non_functional_requirements: [
+            "Latency: Fast translation for text.",
+            "Scalability: Handle high request volume.",
+            "Accuracy: High quality translation.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Translation API",
+            "Inference Engine (NMT Models)",
+            "Language Detection Service",
+            "Cache (Common phrases)",
+            "Training Pipeline",
+            "Feedback Loop"
+        ]
+    },
+    {
+        title: "Design a MapReduce Framework",
+        slug: "design-mapreduce",
+        description: "Design a distributed processing framework like Hadoop MapReduce.",
+        difficulty: "Hard",
+        companies: ["Google", "Amazon", "Hadoop"],
+        functional_requirements: [
+            "User submits Map and Reduce jobs.",
+            "Split input data.",
+            "Distribute tasks to workers.",
+            "Shuffle and Sort intermediate data.",
+            "Store output."
+        ],
+        non_functional_requirements: [
+            "Fault Tolerance: Handle worker failures.",
+            "Scalability: Scale to thousands of nodes.",
+            "Efficiency: Data locality optimization.",
+            "Reliability: Correct results."
+        ],
+        expected_components: [
+            "Job Tracker / Master",
+            "Task Tracker / Worker",
+            "Distributed File System (DFS)",
+            "Scheduler",
+            "Shuffle Handler",
+            "Heartbeat Monitor"
+        ]
+    },
+    {
+        title: "Design a Location History Service",
+        slug: "design-location-history",
+        description: "Design a service to store and query user location history like Google Timeline.",
+        difficulty: "Medium",
+        companies: ["Google", "Uber", "Apple"],
+        functional_requirements: [
+            "Ingest location data points periodically.",
+            "Store trajectory data.",
+            "Query history by time range.",
+            "Detect places visited.",
+            "Delete history."
+        ],
+        non_functional_requirements: [
+            "Write Heavy: High ingestion rate.",
+            "Privacy: Strict data access controls.",
+            "Scalability: Store petabytes of location data.",
+            "Efficiency: Compression of trajectories."
+        ],
+        expected_components: [
+            "Ingestion Service",
+            "Trajectory Compression (Kalman Filter)",
+            "Time Series Database / Cassandra",
+            "Geospatial Index",
+            "Query Service",
+            "Privacy/Encryption Service"
+        ]
+    },
+    {
+        title: "Design a Podcast Hosting Platform",
+        slug: "design-podcast-platform",
+        description: "Design a platform to host and distribute podcasts like Spotify or Apple Podcasts.",
+        difficulty: "Medium",
+        companies: ["Spotify", "Apple", "Amazon"],
+        functional_requirements: [
+            "Upload audio episodes.",
+            "RSS feed generation.",
+            "Analytics (downloads, listens).",
+            "Search and discovery.",
+            "Monetization (Ads/Subscription)."
+        ],
+        non_functional_requirements: [
+            "Availability: High availability for RSS feeds.",
+            "Scalability: Serve large audio files globally.",
+            "Latency: Fast download/streaming.",
+            "Consistency: Analytics accuracy."
+        ],
+        expected_components: [
+            "Upload Service",
+            "RSS Generator",
+            "CDN (Audio files)",
+            "Analytics Engine",
+            "Search Service",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Newsletter Platform (Substack)",
+        slug: "design-newsletter-platform",
+        description: "Design a platform for creating and sending newsletters.",
+        difficulty: "Medium",
+        companies: ["Twitter", "LinkedIn", "Substack"],
+        functional_requirements: [
+            "Create and edit posts.",
+            "Subscribe/Unsubscribe users.",
+            "Send bulk emails.",
+            "Paid subscriptions.",
+            "Analytics (Open rate, CTR)."
+        ],
+        non_functional_requirements: [
+            "Reliability: High email deliverability.",
+            "Throughput: Send millions of emails quickly.",
+            "Scalability: Handle large mailing lists.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Editor Service",
+            "Subscription Service",
+            "Email Sender / MTA",
+            "Queue (Kafka/RabbitMQ)",
+            "Analytics Service",
+            "Payment Gateway"
+        ]
+    },
+    {
+        title: "Design a Survey System (SurveyMonkey)",
+        slug: "design-survey-system",
+        description: "Design a system to create surveys and collect responses.",
+        difficulty: "Medium",
+        companies: ["Google", "Qualtrics", "Microsoft"],
+        functional_requirements: [
+            "Create surveys with various question types.",
+            "Collect responses.",
+            "Analyze results (Charts/Graphs).",
+            "Export data.",
+            "Logic branching."
+        ],
+        non_functional_requirements: [
+            "Consistency: No lost responses.",
+            "Scalability: Handle viral surveys.",
+            "Availability: High availability.",
+            "Security: Data privacy."
+        ],
+        expected_components: [
+            "Survey Builder Service",
+            "Response Collection Service",
+            "Analytics Engine",
+            "Database (Document Store)",
+            "Cache",
+            "Export Service"
+        ]
+    },
+    {
+        title: "Design a Platform as a Service (Heroku)",
+        slug: "design-paas",
+        description: "Design a Platform as a Service (PaaS) that allows developers to build, run, and operate applications entirely in the cloud.",
+        difficulty: "Hard",
+        companies: ["Salesforce", "Google", "Amazon"],
+        functional_requirements: [
+            "Deploy applications from code (Git push).",
+            "Manage application lifecycle (Start, Stop, Restart).",
+            "Scale applications (Vertical/Horizontal).",
+            "Add-ons marketplace (Databases, Caches).",
+            "View logs and metrics."
+        ],
+        non_functional_requirements: [
+            "Isolation: Secure containerization.",
+            "Scalability: Handle thousands of apps.",
+            "Availability: High uptime for hosted apps.",
+            "Performance: Fast deployment."
+        ],
+        expected_components: [
+            "Build Service (Buildpacks)",
+            "Container Orchestrator (K8s/Diego)",
+            "Router / Load Balancer",
+            "Log Aggregator",
+            "Service Broker",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Serverless Compute Platform (AWS Lambda)",
+        slug: "design-serverless-platform",
+        description: "Design a serverless compute service that runs code in response to events.",
+        difficulty: "Hard",
+        companies: ["Amazon", "Google", "Microsoft"],
+        functional_requirements: [
+            "Upload and manage functions.",
+            "Trigger functions via events (HTTP, Queue, Timer).",
+            "Auto-scaling based on request volume.",
+            "Billing based on execution time.",
+            "Support multiple runtimes."
+        ],
+        non_functional_requirements: [
+            "Latency: Low cold start latency.",
+            "Isolation: Secure execution environment (Firecracker/gVisor).",
+            "Scalability: Handle bursty traffic.",
+            "Reliability: Guaranteed execution."
+        ],
+        expected_components: [
+            "Frontend / API Gateway",
+            "Worker Manager",
+            "Function Scheduler",
+            "MicroVM Manager",
+            "Storage (Code)",
+            "Metric/Billing Service"
+        ]
+    },
+    {
+        title: "Design an Object Storage Service (Amazon S3)",
+        slug: "design-object-storage",
+        description: "Design a scalable object storage service for storing and retrieving any amount of data.",
+        difficulty: "Hard",
+        companies: ["Amazon", "Google", "Microsoft"],
+        functional_requirements: [
+            "Create buckets.",
+            "Upload/Download objects (PUT/GET).",
+            "Delete objects.",
+            "List objects.",
+            "Access control policies."
+        ],
+        non_functional_requirements: [
+            "Durability: 99.999999999% durability (11 9s).",
+            "Availability: High availability.",
+            "Scalability: Exabyte scale.",
+            "Throughput: High read/write throughput."
+        ],
+        expected_components: [
+            "Frontend / API Node",
+            "Metadata Service",
+            "Storage Node / Data Node",
+            "Placement Driver",
+            "Replication Manager",
+            "Garbage Collector"
+        ]
+    },
+    {
+        title: "Design a Domain Name System (DNS)",
+        slug: "design-dns",
+        description: "Design a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet.",
+        difficulty: "Hard",
+        companies: ["Google", "Cloudflare", "Amazon"],
+        functional_requirements: [
+            "Resolve domain names to IP addresses.",
+            "Register new domains.",
+            "Update DNS records (A, CNAME, MX).",
+            "Support caching (TTL).",
+            "Hierarchical structure (Root, TLD, Authoritative)."
+        ],
+        non_functional_requirements: [
+            "Availability: Extremely high availability.",
+            "Latency: Ultra-low latency resolution.",
+            "Consistency: Eventual consistency for updates.",
+            "Scalability: Handle global traffic."
+        ],
+        expected_components: [
+            "Root Name Servers",
+            "TLD Name Servers",
+            "Authoritative Name Servers",
+            "Recursive Resolvers",
+            "Caching Layer",
+            "Management API"
+        ]
+    },
+    {
+        title: "Design a Virtual Private Network (VPN)",
+        slug: "design-vpn",
+        description: "Design a VPN service to provide secure and private internet access.",
+        difficulty: "Medium",
+        companies: ["Cisco", "Palo Alto Networks", "Google"],
+        functional_requirements: [
+            "Authenticate users.",
+            "Establish secure tunnel.",
+            "Encrypt traffic.",
+            "Mask user IP address.",
+            "Support multiple protocols (OpenVPN, WireGuard)."
+        ],
+        non_functional_requirements: [
+            "Security: Strong encryption.",
+            "Privacy: No logs policy.",
+            "Performance: Minimal speed loss.",
+            "Availability: Global server network."
+        ],
+        expected_components: [
+            "VPN Client",
+            "VPN Server / Gateway",
+            "Authentication Service (Radius/LDAP)",
+            "Key Management Service",
+            "Tunneling Protocol",
+            "Load Balancer"
+        ]
+    },
+    {
+        title: "Design a Peer-to-Peer File Sharing System (BitTorrent)",
+        slug: "design-p2p-file-sharing",
+        description: "Design a decentralized P2P file sharing protocol.",
+        difficulty: "Hard",
+        companies: ["Bram Cohen", "Tron", "Filecoin"],
+        functional_requirements: [
+            "Share files (Seed).",
+            "Download files (Leech).",
+            "Discover peers.",
+            "Chunk file into pieces.",
+            "Verify file integrity."
+        ],
+        non_functional_requirements: [
+            "Scalability: Decentralized scaling.",
+            "Robustness: Handle peer churn.",
+            "Efficiency: Parallel downloads.",
+            "Fairness: Tit-for-tat mechanism."
+        ],
+        expected_components: [
+            "Tracker (Centralized/DHT)",
+            "Peer Client",
+            "Piece Selection Algorithm",
+            "Choking Algorithm",
+            "File Hasher",
+            "Network Protocol (TCP/UDP)"
+        ]
+    },
+    {
+        title: "Design a Blockchain Ledger (Bitcoin)",
+        slug: "design-blockchain",
+        description: "Design a decentralized, distributed ledger technology.",
+        difficulty: "Hard",
+        companies: ["Coinbase", "Binance", "Ripple"],
+        functional_requirements: [
+            "Create transactions.",
+            "Broadcast transactions.",
+            "Mine/Validate blocks.",
+            "Chain blocks (Consensus).",
+            "Wallet management."
+        ],
+        non_functional_requirements: [
+            "Security: Cryptographically secure.",
+            "Decentralization: No central authority.",
+            "Immutability: Ledger cannot be altered.",
+            "Consistency: Global consensus."
+        ],
+        expected_components: [
+            "P2P Network",
+            "Mempool",
+            "Miner / Validator",
+            "Consensus Engine (PoW/PoS)",
+            "Ledger Storage (LevelDB)",
+            "Wallet"
+        ]
+    },
+    {
+        title: "Design a NFT Marketplace (OpenSea)",
+        slug: "design-nft-marketplace",
+        description: "Design a marketplace for buying, selling, and creating Non-Fungible Tokens.",
+        difficulty: "Medium",
+        companies: ["OpenSea", "Coinbase", "Rarible"],
+        functional_requirements: [
+            "Mint NFTs.",
+            "List NFTs for sale (Fixed price/Auction).",
+            "Buy NFTs.",
+            "Wallet integration (MetaMask).",
+            "Search and filter collections."
+        ],
+        non_functional_requirements: [
+            "Consistency: Blockchain sync.",
+            "Availability: High availability for browsing.",
+            "Security: Smart contract security.",
+            "Scalability: Handle hype drops."
+        ],
+        expected_components: [
+            "Blockchain Indexer",
+            "Smart Contracts",
+            "Marketplace API",
+            "Metadata Storage (IPFS)",
+            "Search Engine",
+            "Wallet Connector"
+        ]
+    },
+    {
+        title: "Design a Password Manager (LastPass)",
+        slug: "design-password-manager",
+        description: "Design a secure password management service.",
+        difficulty: "Medium",
+        companies: ["LogMeIn", "1Password", "Google"],
+        functional_requirements: [
+            "Store passwords securely.",
+            "Generate strong passwords.",
+            "Auto-fill credentials.",
+            "Sync across devices.",
+            "Secure sharing."
+        ],
+        non_functional_requirements: [
+            "Security: Zero-knowledge architecture.",
+            "Privacy: End-to-end encryption.",
+            "Availability: Access passwords anytime.",
+            "Reliability: No data loss."
+        ],
+        expected_components: [
+            "Client App (Encryption/Decryption)",
+            "Sync Service",
+            "Storage Service (Encrypted blobs)",
+            "Authentication Service (MFA)",
+            "Key Derivation Function",
+            "Audit Log"
+        ]
+    },
+    {
+        title: "Design a Two-Factor Authentication System (Authy)",
+        slug: "design-2fa",
+        description: "Design a system to provide 2FA via SMS, Email, or TOTP.",
+        difficulty: "Medium",
+        companies: ["Twilio", "Google", "Microsoft"],
+        functional_requirements: [
+            "Generate OTP/TOTP.",
+            "Send OTP via SMS/Email.",
+            "Validate OTP.",
+            "Rate limiting.",
+            "Recovery codes."
+        ],
+        non_functional_requirements: [
+            "Security: Prevent brute force.",
+            "Latency: Fast delivery of OTP.",
+            "Reliability: High delivery rate.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "OTP Generation Service",
+            "Validation Service",
+            "SMS/Email Gateway",
+            "Rate Limiter",
+            "Database (Short-lived tokens)",
+            "Secret Store"
+        ]
+    },
+    {
+        title: "Design an Identity Provider (Auth0)",
+        slug: "design-identity-provider",
+        description: "Design an Identity and Access Management (IAM) system.",
+        difficulty: "Hard",
+        companies: ["Okta", "Microsoft", "Ping Identity"],
+        functional_requirements: [
+            "User registration and login.",
+            "SSO (Single Sign-On).",
+            "OAuth2 / OIDC support.",
+            "MFA support.",
+            "User management dashboard."
+        ],
+        non_functional_requirements: [
+            "Security: Industry standard protocols.",
+            "Availability: Critical dependency for apps.",
+            "Scalability: Handle millions of logins.",
+            "Compliance: GDPR/SOC2."
+        ],
+        expected_components: [
+            "Authentication Server",
+            "Authorization Server",
+            "Directory Service",
+            "Token Service (JWT)",
+            "Risk Engine",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Web Application Firewall (WAF)",
+        slug: "design-waf",
+        description: "Design a firewall to protect web applications from common attacks.",
+        difficulty: "Hard",
+        companies: ["Cloudflare", "Akamai", "Imperva"],
+        functional_requirements: [
+            "Inspect HTTP traffic.",
+            "Block SQL Injection, XSS, etc.",
+            "Rate limiting / DDoS protection.",
+            "Custom rules engine.",
+            "Logging and reporting."
+        ],
+        non_functional_requirements: [
+            "Latency: Minimal inspection overhead.",
+            "Accuracy: Low false positives.",
+            "Scalability: Handle massive traffic.",
+            "Reliability: Fail open/close config."
+        ],
+        expected_components: [
+            "Reverse Proxy",
+            "Rules Engine",
+            "Signature Database",
+            "Anomaly Detection (ML)",
+            "Log Analyzer",
+            "Configuration Plane"
+        ]
+    },
+    {
+        title: "Design a DDoS Protection System",
+        slug: "design-ddos-protection",
+        description: "Design a system to mitigate Distributed Denial of Service attacks.",
+        difficulty: "Hard",
+        companies: ["Cloudflare", "Google", "Amazon"],
+        functional_requirements: [
+            "Detect traffic anomalies.",
+            "Scrub malicious traffic.",
+            "Challenge suspicious users (CAPTCHA).",
+            "Block IP addresses.",
+            "Traffic shaping."
+        ],
+        non_functional_requirements: [
+            "Latency: Real-time mitigation.",
+            "Throughput: Handle Tbps attacks.",
+            "Availability: Always on.",
+            "Accuracy: Distinguish legitimate traffic."
+        ],
+        expected_components: [
+            "Traffic Monitor / Sampler",
+            "Scrubbing Centers",
+            "BGP Anycast Network",
+            "Challenge Service",
+            "Fingerprinting Engine",
+            "Control Plane"
+        ]
+    },
+    {
+        title: "Design a CAPTCHA System (reCAPTCHA)",
+        slug: "design-captcha",
+        description: "Design a system to distinguish between human users and bots.",
+        difficulty: "Medium",
+        companies: ["Google", "hCaptcha", "Cloudflare"],
+        functional_requirements: [
+            "Generate challenges (Image, Audio, Puzzle).",
+            "Validate user response.",
+            "Risk analysis score.",
+            "Accessibility support.",
+            "Adaptive difficulty."
+        ],
+        non_functional_requirements: [
+            "Security: Hard for bots to solve.",
+            "Usability: Easy for humans.",
+            "Latency: Fast generation/validation.",
+            "Scalability: High volume."
+        ],
+        expected_components: [
+            "Challenge Generator",
+            "Validation Service",
+            "Risk Analysis Engine (ML)",
+            "Asset CDN",
+            "Telemetry Collector",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Plagiarism Checker (Turnitin)",
+        slug: "design-plagiarism-checker",
+        description: "Design a system to detect plagiarism in submitted documents.",
+        difficulty: "Medium",
+        companies: ["Turnitin", "Grammarly", "Google"],
+        functional_requirements: [
+            "Upload documents.",
+            "Compare against database of sources.",
+            "Generate similarity report.",
+            "Highlight matching text.",
+            "Exclude quotes/bibliography."
+        ],
+        non_functional_requirements: [
+            "Accuracy: Detect paraphrasing.",
+            "Scalability: Index billions of documents.",
+            "Performance: Reasonable check time.",
+            "Privacy: Document security."
+        ],
+        expected_components: [
+            "Document Parser",
+            "Fingerprinting / Hashing (Winnowing)",
+            "Index / Search Engine",
+            "Comparison Engine",
+            "Report Generator",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Crowdfunding Platform (Kickstarter)",
+        slug: "design-crowdfunding",
+        description: "Design a platform for funding creative projects.",
+        difficulty: "Medium",
+        companies: ["Kickstarter", "Indiegogo", "GoFundMe"],
+        functional_requirements: [
+            "Create project campaigns.",
+            "Back projects (Pledge).",
+            "All-or-nothing funding model.",
+            "Payment processing.",
+            "Project updates."
+        ],
+        non_functional_requirements: [
+            "Consistency: Accurate funding totals.",
+            "Scalability: Handle viral campaigns.",
+            "Availability: High availability.",
+            "Security: Financial data."
+        ],
+        expected_components: [
+            "Campaign Service",
+            "Pledge Service",
+            "Payment Gateway",
+            "Notification Service",
+            "Search Service",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Blogging Platform (Medium)",
+        slug: "design-blogging-platform",
+        description: "Design a publishing platform for articles and blogs.",
+        difficulty: "Medium",
+        companies: ["Medium", "WordPress", "Tumblr"],
+        functional_requirements: [
+            "Write and publish articles.",
+            "Rich text editor.",
+            "Follow authors/topics.",
+            "Claps/Likes and Comments.",
+            "Personalized feed."
+        ],
+        non_functional_requirements: [
+            "Read Heavy: High read throughput.",
+            "Availability: High availability.",
+            "SEO Friendly.",
+            "Scalability: Handle viral articles."
+        ],
+        expected_components: [
+            "Content Management Service",
+            "User Graph Service",
+            "Feed Service",
+            "Recommendation Engine",
+            "CDN",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Telemedicine Platform (Practo)",
+        slug: "design-telemedicine",
+        description: "Design a platform for online doctor consultations.",
+        difficulty: "Medium",
+        companies: ["Teladoc", "Practo", "Amwell"],
+        functional_requirements: [
+            "Search doctors.",
+            "Book appointments.",
+            "Video consultation.",
+            "Digital prescriptions.",
+            "Health records storage."
+        ],
+        non_functional_requirements: [
+            "Security: HIPAA compliance.",
+            "Reliability: Stable video calls.",
+            "Privacy: Patient data protection.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Appointment Service",
+            "Video Service (WebRTC)",
+            "EHR (Electronic Health Record) System",
+            "Notification Service",
+            "Payment Gateway",
+            "Search Service"
+        ]
+    },
+    {
+        title: "Design a Bike Sharing System (Lime)",
+        slug: "design-bike-sharing",
+        description: "Design a dockless bike or scooter sharing system.",
+        difficulty: "Medium",
+        companies: ["Lime", "Uber", "Lyft"],
+        functional_requirements: [
+            "Locate nearby bikes.",
+            "Unlock bike (QR code).",
+            "Track ride duration/distance.",
+            "Lock bike and payment.",
+            "Report issues."
+        ],
+        non_functional_requirements: [
+            "Real-time: Accurate location tracking.",
+            "Connectivity: IoT communication.",
+            "Scalability: Handle city-wide fleets.",
+            "Reliability: Payment processing."
+        ],
+        expected_components: [
+            "IoT Gateway",
+            "Location Service",
+            "Ride Service",
+            "Payment Service",
+            "Geofencing Service",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Smart Home Automation System",
+        slug: "design-smart-home",
+        description: "Design a system to control and monitor smart home devices.",
+        difficulty: "Medium",
+        companies: ["Google (Nest)", "Amazon (Ring)", "Apple"],
+        functional_requirements: [
+            "Connect devices (Lights, Thermostat).",
+            "Remote control via app.",
+            "Automation rules (Scenes).",
+            "Voice control integration.",
+            "Alerts and notifications."
+        ],
+        non_functional_requirements: [
+            "Latency: Fast device response.",
+            "Security: Secure device communication.",
+            "Reliability: Local fallback.",
+            "Scalability: Support many devices."
+        ],
+        expected_components: [
+            "IoT Hub / Gateway",
+            "Device Shadow Service",
+            "Rule Engine",
+            "User API",
+            "Notification Service",
+            "Database (Time-series)"
+        ]
+    },
+    {
+        title: "Design a Supply Chain Management System",
+        slug: "design-supply-chain",
+        description: "Design a system to track goods from manufacturing to delivery.",
+        difficulty: "Hard",
+        companies: ["Amazon", "Maersk", "SAP"],
+        functional_requirements: [
+            "Track inventory levels.",
+            "Order processing.",
+            "Shipment tracking.",
+            "Supplier management.",
+            "Demand forecasting."
+        ],
+        non_functional_requirements: [
+            "Consistency: Accurate inventory.",
+            "Scalability: Global supply chain.",
+            "Integration: Connect with various logistics partners.",
+            "Availability: High uptime."
+        ],
+        expected_components: [
+            "Inventory Service",
+            "Order Management System",
+            "Logistics Service",
+            "Forecasting Engine (ML)",
+            "ERP Integration",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Traffic Control System",
+        slug: "design-traffic-control",
+        description: "Design a smart city traffic control system to optimize flow.",
+        difficulty: "Hard",
+        companies: ["Siemens", "IBM", "Google"],
+        functional_requirements: [
+            "Monitor traffic flow (Sensors/Cameras).",
+            "Control traffic lights.",
+            "Detect accidents/congestion.",
+            "Prioritize emergency vehicles.",
+            "Analytics dashboard."
+        ],
+        non_functional_requirements: [
+            "Real-time: Instant response to traffic conditions.",
+            "Reliability: Fail-safe mechanisms.",
+            "Scalability: City-wide coverage.",
+            "Security: Prevent hacking."
+        ],
+        expected_components: [
+            "Sensor Ingestion",
+            "Control Logic Engine",
+            "Traffic Light Controller",
+            "Computer Vision Service",
+            "Analytics Platform",
+            "Edge Computing Nodes"
+        ]
+    },
+    {
+        title: "Design a Weather Forecasting System",
+        slug: "design-weather-system",
+        description: "Design a system to ingest weather data and provide forecasts.",
+        difficulty: "Medium",
+        companies: ["IBM (The Weather Company)", "Google", "AccuWeather"],
+        functional_requirements: [
+            "Ingest data from stations/satellites.",
+            "Run forecast models.",
+            "Serve current weather API.",
+            "Serve forecast API.",
+            "Weather alerts."
+        ],
+        non_functional_requirements: [
+            "Accuracy: Reliable forecasts.",
+            "Latency: Fast API response.",
+            "Scalability: Handle global requests.",
+            "Data Volume: Process massive datasets."
+        ],
+        expected_components: [
+            "Data Ingestion Pipeline",
+            "HPC / Model Runner",
+            "API Gateway",
+            "Cache (CDN/Redis)",
+            "Alerting Service",
+            "Big Data Storage"
+        ]
+    },
+    {
+        title: "Design a Digital Library System",
+        slug: "design-digital-library",
+        description: "Design a system for borrowing and reading digital books.",
+        difficulty: "Medium",
+        companies: ["OverDrive", "Amazon (Kindle)", "Google Books"],
+        functional_requirements: [
+            "Catalog of books.",
+            "Borrow/Return books (DRM).",
+            "Read books online/offline.",
+            "Search and discovery.",
+            "User reviews."
+        ],
+        non_functional_requirements: [
+            "Availability: High availability.",
+            "Scalability: Large catalog and user base.",
+            "Consistency: License management.",
+            "Performance: Fast page loading."
+        ],
+        expected_components: [
+            "Catalog Service",
+            "Lending Service (License Manager)",
+            "Reader App / Web Reader",
+            "Search Service",
+            "Content Storage (Encrypted)",
+            "Database"
+        ]
+    },
+    {
+        title: "Design a Video Transcoding Service (Handbrake Cloud)",
+        slug: "design-video-transcoding",
+        description: "Design a scalable service to convert videos into multiple formats.",
+        difficulty: "Medium",
+        companies: ["Netflix", "YouTube", "Amazon"],
+        functional_requirements: [
+            "Upload source video.",
+            "Specify target formats/resolutions.",
+            "Process transcoding jobs.",
+            "Notify on completion.",
+            "Store output videos."
+        ],
+        non_functional_requirements: [
+            "Scalability: Parallel processing.",
+            "Efficiency: Optimize compute usage.",
+            "Reliability: Retry failed jobs.",
+            "Performance: Fast turnaround."
+        ],
+        expected_components: [
+            "Job Queue",
+            "Worker Pool (Spot Instances)",
+            "Storage (S3)",
+            "Metadata Database",
+            "Notification Service",
+            "API Gateway"
+        ]
+    },
+    {
+        title: "Design a Distributed Database (CockroachDB)",
+        slug: "design-distributed-database",
+        description: "Design a distributed SQL database that offers strong consistency and horizontal scalability.",
+        difficulty: "Hard",
+        companies: ["Google", "Cockroach Labs", "Yugabyte"],
+        functional_requirements: [
+            "Execute SQL queries.",
+            "Support ACID transactions.",
+            "Geo-replication.",
+            "Automatic sharding/rebalancing.",
+            "High availability."
+        ],
+        non_functional_requirements: [
+            "Consistency: Serializable isolation.",
+            "Availability: Survive region failures.",
+            "Scalability: Scale to thousands of nodes.",
+            "Latency: Low latency for local reads."
+        ],
+        expected_components: [
+            "SQL Layer (Parser/Planner)",
+            "Transaction Manager",
+            "Key-Value Storage Engine (RocksDB)",
+            "Replication Group (Raft)",
+            "Gossip Protocol",
+            "Time Synchronization (TrueTime/HLC)"
+        ]
+    },
+    {
+        title: "Design a Time-Series Database (InfluxDB)",
+        slug: "design-time-series-db",
+        description: "Design a database optimized for storing and querying time-series data.",
+        difficulty: "Hard",
+        companies: ["InfluxData", "Prometheus", "Google"],
+        functional_requirements: [
+            "Ingest high-volume metric data.",
+            "Query data by time range.",
+            "Downsampling and aggregation.",
+            "Data retention policies.",
+            "Tag-based filtering."
+        ],
+        non_functional_requirements: [
+            "Write Throughput: Handle millions of writes/sec.",
+            "Compression: High compression ratio (Gorilla).",
+            "Latency: Fast range queries.",
+            "Scalability: Horizontal scaling."
+        ],
+        expected_components: [
+            "Write Ahead Log (WAL)",
+            "In-memory Buffer",
+            "TSM (Time Structured Merge) Tree",
+            "Query Engine",
+            "Compactor",
+            "Retention Enforcer"
+        ]
+    },
+    {
+        title: "Design a Vector Database (Pinecone)",
+        slug: "design-vector-db",
+        description: "Design a database optimized for storing and querying high-dimensional vectors for AI applications.",
+        difficulty: "Hard",
+        companies: ["Pinecone", "Milvus", "Google"],
+        functional_requirements: [
+            "Insert vectors with metadata.",
+            "Nearest Neighbor Search (k-NN).",
+            "Filter by metadata.",
+            "Update/Delete vectors.",
+            "Real-time indexing."
+        ],
+        non_functional_requirements: [
+            "Latency: Low latency similarity search.",
+            "Recall: High accuracy (Approximate NN).",
+            "Scalability: Billions of vectors.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Vector Index (HNSW/IVF)",
+            "Storage Engine",
+            "Query Coordinator",
+            "Index Builder",
+            "Metadata Store",
+            "API Gateway"
+        ]
+    },
+    {
+        title: "Design a Graph Database (Neo4j)",
+        slug: "design-graph-db",
+        description: "Design a database optimized for storing and traversing graph relationships.",
+        difficulty: "Hard",
+        companies: ["Neo4j", "Amazon", "Meta"],
+        functional_requirements: [
+            "Store nodes and relationships.",
+            "Execute graph traversal queries (Cypher/Gremlin).",
+            "ACID transactions.",
+            "Index-free adjacency.",
+            "Property graph model."
+        ],
+        non_functional_requirements: [
+            "Performance: Constant time traversal per hop.",
+            "Scalability: Sharding large graphs.",
+            "Consistency: Strong consistency.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Graph Storage Engine",
+            "Traversal Engine",
+            "Query Parser",
+            "Transaction Manager",
+            "Cache (Page Cache)",
+            "Lock Manager"
+        ]
+    },
+    {
+        title: "Design a Service Mesh (Istio)",
+        slug: "design-service-mesh",
+        description: "Design a dedicated infrastructure layer for facilitating service-to-service communications.",
+        difficulty: "Hard",
+        companies: ["Google", "Lyft", "Microsoft"],
+        functional_requirements: [
+            "Traffic management (Routing, Splitting).",
+            "Security (mTLS, AuthZ).",
+            "Observability (Metrics, Tracing).",
+            "Resilience (Retries, Circuit Breaking).",
+            "Policy enforcement."
+        ],
+        non_functional_requirements: [
+            "Latency: Minimal overhead per hop.",
+            "Scalability: Support thousands of services.",
+            "Reliability: No single point of failure.",
+            "Transparency: No code changes required."
+        ],
+        expected_components: [
+            "Data Plane (Sidecar Proxy - Envoy)",
+            "Control Plane (Pilot)",
+            "Certificate Authority (Citadel)",
+            "Mixer/Telemetry",
+            "Configuration API",
+            "Service Discovery"
+        ]
+    },
+    {
+        title: "Design a Distributed Configuration System (Etcd)",
+        slug: "design-distributed-config",
+        description: "Design a strongly consistent, distributed key-value store for configuration and service discovery.",
+        difficulty: "Hard",
+        companies: ["CoreOS", "Google", "HashiCorp"],
+        functional_requirements: [
+            "Store key-value pairs.",
+            "Watch for changes.",
+            "Lease/TTL support.",
+            "Distributed locking primitives.",
+            "Cluster membership management."
+        ],
+        non_functional_requirements: [
+            "Consistency: Linearizable reads/writes.",
+            "Availability: High availability (Quorum).",
+            "Reliability: Durability of data.",
+            "Performance: Fast reads."
+        ],
+        expected_components: [
+            "Consensus Module (Raft)",
+            "Storage Engine (B+ Tree/BoltDB)",
+            "WAL (Write Ahead Log)",
+            "Snapshot Manager",
+            "gRPC Server",
+            "Watch Stream"
+        ]
+    },
+    {
+        title: "Design a Secrets Management System (Vault)",
+        slug: "design-secrets-management",
+        description: "Design a system to securely store and access secrets like API keys, passwords, and certificates.",
+        difficulty: "Hard",
+        companies: ["HashiCorp", "AWS", "Google"],
+        functional_requirements: [
+            "Store static secrets.",
+            "Generate dynamic secrets.",
+            "Encryption as a Service.",
+            "Access control policies.",
+            "Secret revocation/rotation."
+        ],
+        non_functional_requirements: [
+            "Security: Encryption at rest and in transit.",
+            "Availability: Critical path dependency.",
+            "Auditability: Log every access.",
+            "Isolation: Secure memory handling."
+        ],
+        expected_components: [
+            "Barrier (Encryption Core)",
+            "Storage Backend (Consul/S3)",
+            "Auth Methods",
+            "Secret Engines",
+            "Audit Logger",
+            "API Server"
+        ]
+    },
+    {
+        title: "Design a Build System (Bazel)",
+        slug: "design-build-system",
+        description: "Design a scalable, hermetic build system for large monorepos.",
+        difficulty: "Hard",
+        companies: ["Google", "Meta", "Twitter"],
+        functional_requirements: [
+            "Define build targets and dependencies.",
+            "Execute builds.",
+            "Run tests.",
+            "Cache build artifacts.",
+            "Remote execution."
+        ],
+        non_functional_requirements: [
+            "Correctness: Hermetic builds (Reproducibility).",
+            "Performance: Incremental builds.",
+            "Scalability: Parallel execution.",
+            "Efficiency: Remote caching."
+        ],
+        expected_components: [
+            "Build Graph (DAG) Analyzer",
+            "Scheduler",
+            "Execution Engine (Sandboxed)",
+            "Artifact Cache (CAS)",
+            "Remote Executor",
+            "File System Watcher"
+        ]
+    },
+    {
+        title: "Design an LSM Tree Storage Engine",
+        slug: "design-lsm-tree",
+        description: "Design a Log-Structured Merge-tree storage engine used in databases like RocksDB or Cassandra.",
+        difficulty: "Hard",
+        companies: ["Meta", "Google", "LinkedIn"],
+        functional_requirements: [
+            "Put(key, value).",
+            "Get(key).",
+            "Delete(key).",
+            "Range Scan.",
+            "Persistence."
+        ],
+        non_functional_requirements: [
+            "Write Throughput: Optimized for writes.",
+            "Space Efficiency: Compression.",
+            "Read Performance: Bloom filters to minimize disk seeks.",
+            "Durability: Crash recovery."
+        ],
+        expected_components: [
+            "MemTable (SkipList)",
+            "WAL (Write Ahead Log)",
+            "SSTables (Sorted String Tables)",
+            "Compaction Process",
+            "Bloom Filter",
+            "Block Cache"
+        ]
+    },
+    {
+        title: "Design a B-Tree Storage Engine",
+        slug: "design-btree-engine",
+        description: "Design a B-Tree based storage engine used in databases like PostgreSQL or MySQL.",
+        difficulty: "Hard",
+        companies: ["Oracle", "Microsoft", "PostgreSQL"],
+        functional_requirements: [
+            "Insert/Update/Delete records.",
+            "Point lookup.",
+            "Range scan.",
+            "ACID transactions.",
+            "Crash recovery."
+        ],
+        non_functional_requirements: [
+            "Read Performance: Optimized for reads.",
+            "Consistency: ACID compliance.",
+            "Concurrency: Row-level locking.",
+            "Durability: Write Ahead Logging."
+        ],
+        expected_components: [
+            "Buffer Pool Manager",
+            "Page Manager",
+            "Lock Manager",
+            "Log Manager (WAL)",
+            "B-Tree Index Structure",
+            "Recovery Manager (ARIES)"
+        ]
+    },
+    {
+        title: "Design a Distributed Transaction Manager",
+        slug: "design-transaction-manager",
+        description: "Design a system to manage distributed transactions across microservices (Two-Phase Commit / Sagas).",
+        difficulty: "Hard",
+        companies: ["Uber", "Amazon", "Google"],
+        functional_requirements: [
+            "Begin, Commit, Rollback transactions.",
+            "Coordinate participants.",
+            "Handle failures (timeouts, crashes).",
+            "Deadlock detection.",
+            "Compensation logic (Sagas)."
+        ],
+        non_functional_requirements: [
+            "Consistency: Atomicity across services.",
+            "Availability: High availability.",
+            "Latency: Minimal locking duration.",
+            "Reliability: Durable state."
+        ],
+        expected_components: [
+            "Transaction Coordinator",
+            "Participant Interface",
+            "Transaction Log",
+            "Recovery Manager",
+            "Lock Service",
+            "Timeout Monitor"
+        ]
+    },
+    {
+        title: "Design a Change Data Capture (CDC) System",
+        slug: "design-cdc-system",
+        description: "Design a system to capture and propagate data changes from a database to downstream systems.",
+        difficulty: "Hard",
+        companies: ["Red Hat (Debezium)", "LinkedIn", "Netflix"],
+        functional_requirements: [
+            "Capture inserts, updates, deletes.",
+            "Stream changes to message queue.",
+            "Schema evolution support.",
+            "Initial snapshotting.",
+            "Filter/Transform events."
+        ],
+        non_functional_requirements: [
+            "Latency: Near real-time propagation.",
+            "Reliability: At-least-once delivery.",
+            "Ordering: Preserve commit order.",
+            "Impact: Minimal load on source DB."
+        ],
+        expected_components: [
+            "Log Miner / Connector",
+            "Schema Registry",
+            "Snapshotter",
+            "Offset Manager",
+            "Message Producer (Kafka)",
+            "Transformation Engine"
+        ]
+    },
+    {
+        title: "Design a Data Lakehouse (Delta Lake)",
+        slug: "design-data-lakehouse",
+        description: "Design a storage layer that brings ACID transactions to Big Data workloads on object storage.",
+        difficulty: "Hard",
+        companies: ["Databricks", "Uber", "Netflix"],
+        functional_requirements: [
+            "ACID transactions on file storage.",
+            "Schema enforcement.",
+            "Time travel (Query old snapshots).",
+            "Upsert/Delete support.",
+            "Batch and Streaming unification."
+        ],
+        non_functional_requirements: [
+            "Scalability: Exabyte scale.",
+            "Performance: Optimized query execution.",
+            "Reliability: Data integrity.",
+            "Openness: Open formats (Parquet)."
+        ],
+        expected_components: [
+            "Transaction Log (Delta Log)",
+            "Metadata Manager",
+            "File Manager (Object Store)",
+            "Query Optimizer",
+            "Compaction Service",
+            "Vacuum Service"
+        ]
+    },
+    {
+        title: "Design a Real-time Fraud Detection System",
+        slug: "design-fraud-detection",
+        description: "Design a system to detect and block fraudulent transactions in real-time.",
+        difficulty: "Hard",
+        companies: ["Stripe", "PayPal", "Visa"],
+        functional_requirements: [
+            "Ingest transaction events.",
+            "Evaluate rules and ML models.",
+            "Approve/Reject/Challenge transactions.",
+            "Feature calculation (aggregates).",
+            "Case management for manual review."
+        ],
+        non_functional_requirements: [
+            "Latency: < 100ms decision time.",
+            "Throughput: Thousands of TPS.",
+            "Accuracy: Low false positives.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Event Ingestor",
+            "Feature Store (Redis)",
+            "Rule Engine",
+            "ML Inference Service",
+            "Case Management UI",
+            "Data Lake (Training)"
+        ]
+    },
+    {
+        title: "Design a Privacy-Preserving Analytics System",
+        slug: "design-privacy-analytics",
+        description: "Design an analytics system that collects usage data without compromising user privacy (Differential Privacy).",
+        difficulty: "Hard",
+        companies: ["Apple", "Google", "Mozilla"],
+        functional_requirements: [
+            "Collect telemetry data.",
+            "Apply noise (Local Differential Privacy).",
+            "Aggregate data.",
+            "Query aggregate statistics.",
+            "Privacy budget management."
+        ],
+        non_functional_requirements: [
+            "Privacy: Mathematical privacy guarantees.",
+            "Accuracy: Useful aggregate insights.",
+            "Scalability: Millions of devices.",
+            "Security: Secure transmission."
+        ],
+        expected_components: [
+            "Client SDK (Noise Injection)",
+            "Ingestion Service",
+            "Shuffler / Aggregator",
+            "Privacy Budget Accountant",
+            "Query Engine",
+            "Storage"
+        ]
+    },
+    {
+        title: "Design a Workflow Orchestration Engine (Airflow)",
+        slug: "design-workflow-engine",
+        description: "Design a platform to programmatically author, schedule, and monitor workflows.",
+        difficulty: "Hard",
+        companies: ["Airbnb", "Netflix", "Uber"],
+        functional_requirements: [
+            "Define workflows as DAGs.",
+            "Schedule execution (Time/Event based).",
+            "Manage task dependencies.",
+            "Retry failed tasks.",
+            "Monitor execution status."
+        ],
+        non_functional_requirements: [
+            "Reliability: Tasks must execute.",
+            "Scalability: Concurrent workflow execution.",
+            "Extensibility: Custom operators.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "Scheduler",
+            "Executor (Kubernetes/Celery)",
+            "Metadata Database",
+            "Web Server (UI)",
+            "DAG Parser",
+            "Worker Nodes"
+        ]
+    },
+    {
+        title: "Design a Real-time Collaborative Spreadsheet",
+        slug: "design-collaborative-spreadsheet",
+        description: "Design a web-based spreadsheet with real-time collaboration like Google Sheets.",
+        difficulty: "Hard",
+        companies: ["Google", "Microsoft", "Airtable"],
+        functional_requirements: [
+            "Edit cells (Values, Formulas).",
+            "Real-time updates to collaborators.",
+            "Formula evaluation and dependency tracking.",
+            "Formatting and styling.",
+            "Version history."
+        ],
+        non_functional_requirements: [
+            "Latency: Instant updates.",
+            "Consistency: Convergent state.",
+            "Performance: Handle large sheets.",
+            "Availability: High availability."
+        ],
+        expected_components: [
+            "OT/CRDT Engine",
+            "Calculation Engine (Dependency Graph)",
+            "Sparse Matrix Storage",
+            "WebSocket Gateway",
+            "Presence Service",
+            "Snapshot Service"
+        ]
+    },
+    {
+        title: "Design a Browser Engine (Chrome)",
+        slug: "design-browser-engine",
+        description: "Design the core rendering engine of a web browser.",
+        difficulty: "Hard",
+        companies: ["Google", "Apple", "Mozilla"],
+        functional_requirements: [
+            "Parse HTML, CSS, JavaScript.",
+            "Construct DOM and CSSOM.",
+            "Calculate layout.",
+            "Paint pixels to screen.",
+            "Handle user input."
+        ],
+        non_functional_requirements: [
+            "Performance: 60fps rendering.",
+            "Security: Sandboxing.",
+            "Compatibility: Web standards compliance.",
+            "Efficiency: Memory and battery usage."
+        ],
+        expected_components: [
+            "HTML Parser",
+            "CSS Parser",
+            "JavaScript Engine (V8)",
+            "Layout Engine",
+            "Paint/Compositor",
+            "Network Stack"
+        ]
+    },
+    {
+        title: "Design a JavaScript Runtime (Node.js)",
+        slug: "design-js-runtime",
+        description: "Design an asynchronous event-driven JavaScript runtime.",
+        difficulty: "Hard",
+        companies: ["Joyent", "Google", "Deno"],
+        functional_requirements: [
+            "Execute JavaScript code.",
+            "Non-blocking I/O operations.",
+            "Module system.",
+            "Native bindings (C++).",
+            "Debugger support."
+        ],
+        non_functional_requirements: [
+            "Performance: High throughput for I/O bound tasks.",
+            "Concurrency: Event loop model.",
+            "Stability: Robust error handling.",
+            "Compatibility: ES standards."
+        ],
+        expected_components: [
+            "JS Engine (V8)",
+            "Event Loop (Libuv)",
+            "Task/Microtask Queues",
+            "Thread Pool (for DNS/FS)",
+            "Bindings Layer",
+            "Core Modules"
+        ]
+    },
+    {
+        title: "Design a Virtual Machine (JVM)",
+        slug: "design-virtual-machine",
+        description: "Design a process virtual machine to execute bytecode.",
+        difficulty: "Hard",
+        companies: ["Oracle", "Google", "Azul"],
+        functional_requirements: [
+            "Load and verify class files.",
+            "Execute bytecode (Interpreter/JIT).",
+            "Manage memory (Allocation/GC).",
+            "Thread management.",
+            "Native Interface (JNI)."
+        ],
+        non_functional_requirements: [
+            "Performance: Near-native execution speed.",
+            "Portability: Write once, run anywhere.",
+            "Security: Sandbox execution.",
+            "Reliability: Robust memory management."
+        ],
+        expected_components: [
+            "Class Loader",
+            "Runtime Data Areas (Heap/Stack)",
+            "Execution Engine (Interpreter/JIT)",
+            "Garbage Collector",
+            "Native Method Interface",
+            "Thread Scheduler"
+        ]
+    },
+    {
+        title: "Design a Load Balancer (NGINX)",
+        slug: "design-load-balancer",
+        description: "Design a high-performance software load balancer and reverse proxy.",
+        difficulty: "Hard",
+        companies: ["F5", "NGINX", "Cloudflare"],
+        functional_requirements: [
+            "Distribute traffic to upstream servers.",
+            "Health checks.",
+            "SSL Termination.",
+            "Load balancing algorithms (Round Robin, Least Conn).",
+            "Caching and Compression."
+        ],
+        non_functional_requirements: [
+            "Throughput: Handle 100k+ concurrent connections.",
+            "Latency: Negligible overhead.",
+            "Reliability: High availability.",
+            "Scalability: Event-driven architecture."
+        ],
+        expected_components: [
+            "Event Loop / Worker Processes",
+            "Connection Manager",
+            "Upstream Manager",
+            "SSL Handshake Engine",
+            "Cache Manager",
+            "Configuration Reloader"
+        ]
+    },
+    {
+        title: "Design a VPN Protocol (WireGuard)",
+        slug: "design-vpn-protocol",
+        description: "Design a modern, secure, and high-performance VPN protocol.",
+        difficulty: "Hard",
+        companies: ["Tailscale", "Cloudflare", "Cisco"],
+        functional_requirements: [
+            "Establish secure tunnels.",
+            "Authenticate peers.",
+            "Encapsulate/Decapsulate packets.",
+            "Handle roaming (IP changes).",
+            "Key management."
+        ],
+        non_functional_requirements: [
+            "Security: State-of-the-art cryptography.",
+            "Performance: High throughput, low CPU.",
+            "Simplicity: Small codebase.",
+            "Privacy: Identity hiding."
+        ],
+        expected_components: [
+            "Handshake Mechanism (Noise)",
+            "Crypto Routing Table (Cryptokey Routing)",
+            "Packet Processor",
+            "Timer Wheel (Rekeying)",
+            "Network Interface",
+            "Cookie Mechanism (DDoS protection)"
+        ]
+    },
+    {
+        title: "Design an Onion Routing Network (Tor)",
+        slug: "design-onion-routing",
+        description: "Design a network for anonymous communication.",
+        difficulty: "Hard",
+        companies: ["Tor Project", "Brave", "Privacy Tech"],
+        functional_requirements: [
+            "Anonymize user traffic.",
+            "Multi-hop routing.",
+            "Encryption layering.",
+            "Directory service for nodes.",
+            "Hidden services (.onion)."
+        ],
+        non_functional_requirements: [
+            "Privacy: Unlinkability of sender and receiver.",
+            "Security: Resistance to traffic analysis.",
+            "Decentralization: No central point of failure.",
+            "Usability: Reasonable latency."
+        ],
+        expected_components: [
+            "Directory Authorities",
+            "Relay Nodes (Guard, Middle, Exit)",
+            "Circuit Builder",
+            "Cell Processor",
+            "Encryption Engine",
+            "SOCKS Proxy"
+        ]
+    },
+    {
+        title: "Design a DFS Metadata Service (NameNode)",
+        slug: "design-namenode",
+        description: "Design the metadata management component of a distributed file system.",
+        difficulty: "Hard",
+        companies: ["Google", "Hadoop", "Cloudera"],
+        functional_requirements: [
+            "Manage file system namespace (Tree).",
+            "Map files to blocks.",
+            "Map blocks to DataNodes.",
+            "Handle block replication.",
+            "Client requests (Open, Close, Rename)."
+        ],
+        non_functional_requirements: [
+            "Consistency: Strong consistency.",
+            "Availability: High availability (Active/Standby).",
+            "Scalability: Handle millions of files.",
+            "Durability: Persist metadata."
+        ],
+        expected_components: [
+            "In-memory Namespace Tree",
+            "Edit Log",
+            "FsImage",
+            "Block Manager",
+            "DataNode Registry",
+            "RPC Server"
+        ]
+    },
+    {
+        title: "Design a Garbage Collector",
+        slug: "design-garbage-collector",
+        description: "Design an automatic memory management system for a programming language.",
+        difficulty: "Hard",
+        companies: ["Google (Go)", "Oracle (Java)", "Microsoft (.NET)"],
+        functional_requirements: [
+            "Allocate memory.",
+            "Identify live objects.",
+            "Reclaim dead memory.",
+            "Defragment memory (Compaction).",
+            "Handle finalizers."
+        ],
+        non_functional_requirements: [
+            "Performance: Minimal pause times.",
+            "Throughput: High allocation rate.",
+            "Overhead: Low CPU/Memory overhead.",
+            "Safety: No dangling pointers."
+        ],
+        expected_components: [
+            "Allocator (Bump Pointer/Free List)",
+            "Marking Engine (Tracing)",
+            "Sweeper / Compactor",
+            "Write Barriers",
+            "Root Scanner",
+            "Generation Manager"
+        ]
     }
 ];

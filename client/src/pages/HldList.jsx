@@ -10,6 +10,7 @@ const HldList = () => {
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCompany, setSelectedCompany] = useState('');
+    const [selectedDifficulty, setSelectedDifficulty] = useState('');
 
     useEffect(() => {
         const fetchProblems = async () => {
@@ -36,9 +37,10 @@ const HldList = () => {
             const matchesSearch = problem.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 problem.description.toLowerCase().includes(searchQuery.toLowerCase());
             const matchesCompany = selectedCompany ? problem.companies?.includes(selectedCompany) : true;
-            return matchesSearch && matchesCompany;
+            const matchesDifficulty = selectedDifficulty ? problem.difficulty === selectedDifficulty : true;
+            return matchesSearch && matchesCompany && matchesDifficulty;
         });
-    }, [problems, searchQuery, selectedCompany]);
+    }, [problems, searchQuery, selectedCompany, selectedDifficulty]);
 
     const getDifficultyColor = (difficulty) => {
         switch (difficulty) {
@@ -75,6 +77,26 @@ const HldList = () => {
                     </div>
 
                     <div className="flex items-center gap-3 w-full md:w-auto">
+                        {/* Difficulty Filter */}
+                        <div className="relative w-full md:w-40">
+                            <select
+                                className="w-full pl-4 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none appearance-none cursor-pointer transition-all text-slate-700"
+                                value={selectedDifficulty}
+                                onChange={(e) => setSelectedDifficulty(e.target.value)}
+                            >
+                                <option value="">Difficulty</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        {/* Company Filter */}
                         <div className="relative w-full md:w-64">
                             <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" size={18} />
                             <select
@@ -83,7 +105,15 @@ const HldList = () => {
                                 onChange={(e) => setSelectedCompany(e.target.value)}
                             >
                                 <option value="">All Companies</option>
-                                {companies.map(company => (
+                                <option value="Google">Google</option>
+                                <option value="Meta">Meta</option>
+                                <option value="Amazon">Amazon</option>
+                                <option value="Microsoft">Microsoft</option>
+                                <option value="Netflix">Netflix</option>
+                                <option value="Uber">Uber</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                {companies.filter(c => !['Google', 'Meta', 'Amazon', 'Microsoft', 'Netflix', 'Uber', 'Twitter', 'LinkedIn'].includes(c)).map(company => (
                                     <option key={company} value={company}>{company}</option>
                                 ))}
                             </select>
@@ -94,9 +124,9 @@ const HldList = () => {
                             </div>
                         </div>
 
-                        {(searchQuery || selectedCompany) && (
+                        {(searchQuery || selectedCompany || selectedDifficulty) && (
                             <button
-                                onClick={() => { setSearchQuery(''); setSelectedCompany(''); }}
+                                onClick={() => { setSearchQuery(''); setSelectedCompany(''); setSelectedDifficulty(''); }}
                                 className="p-2.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                                 title="Clear filters"
                             >
@@ -120,7 +150,7 @@ const HldList = () => {
                                 <h3 className="text-lg font-medium text-slate-900 mb-1">No problems found</h3>
                                 <p className="text-slate-500">Try adjusting your search or filters</p>
                                 <button
-                                    onClick={() => { setSearchQuery(''); setSelectedCompany(''); }}
+                                    onClick={() => { setSearchQuery(''); setSelectedCompany(''); setSelectedDifficulty(''); }}
                                     className="mt-4 text-primary font-medium hover:underline"
                                 >
                                     Clear all filters
