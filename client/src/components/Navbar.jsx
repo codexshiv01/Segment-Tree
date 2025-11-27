@@ -22,13 +22,13 @@ const Navbar = () => {
         { name: 'AI Mock Interview', href: '#mock-interview' },
         { name: 'DB Design', href: '#db-design' },
         { name: 'CS Fundamentals', href: '#cs-fundamentals' },
-        { name: 'Course', href: '#course' },
+        { name: 'Course', href: '/course', isRouterLink: true },
     ];
 
     return (
         <nav className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
-                ? 'bg-white/98 backdrop-blur-xl shadow-lg border-b border-slate-100'
-                : 'bg-white/90 backdrop-blur-md'
+            ? 'bg-white/98 backdrop-blur-xl shadow-lg border-b border-slate-100'
+            : 'bg-white/90 backdrop-blur-md'
             }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">

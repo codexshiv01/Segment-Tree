@@ -16,6 +16,8 @@ import Profile from './pages/Profile';
 import HldList from './pages/HldList';
 import HldWorkspace from './pages/HldWorkspace';
 import HldFeedback from './pages/HldFeedback';
+import Course from './pages/Course';
+import CourseChapter from './pages/CourseChapter';
 
 const HomePage = () => (
   <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-primary/20 selection:text-primary">
@@ -45,6 +47,8 @@ function App() {
           <Route path="/hld" element={<HldList />} />
           <Route path="/hld/:slug" element={<HldWorkspace />} />
           <Route path="/hld/:slug/feedback" element={<HldFeedback />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/course/:chapterSlug" element={<CourseChapter />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
