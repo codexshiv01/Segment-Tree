@@ -21,7 +21,7 @@ const Navbar = () => {
         { name: 'Frontend', href: '#frontend' },
         { name: 'AI Mock Interview', href: '#mock-interview' },
         { name: 'DB Design', href: '#db-design' },
-        { name: 'CS Fundamentals', href: '#cs-fundamentals' },
+        { name: 'CS Fundamentals', href: '/cs-fundamentals', isRouterLink: true },
         { name: 'Course', href: '/course', isRouterLink: true },
     ];
 
