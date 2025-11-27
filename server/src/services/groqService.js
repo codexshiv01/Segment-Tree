@@ -83,42 +83,42 @@ Evaluate this design with brutal honesty.
 **Tone**: Professional, strict, demanding, objective. NOT "supportive" or "nice".`;
 
         try {
-            let messages;
-            let model;
+            // Vision models are currently deprecated by Groq with no replacement available
+            // Falling back to text-only model for all requests
+            // Reference: https://console.groq.com/docs/deprecations
 
-            // First try with Vision model if image exists
-            if (canvasImage) {
-                try {
-                    console.log('Attempting Vision Model (llama-3.2-11b-vision-preview)...');
-                    const visionCompletion = await groq.chat.completions.create({
-                        messages: [
-                            {
-                                role: 'system',
-                                content: 'You are a supportive system design mentor. Always respond with valid JSON only, no additional text.'
-                            },
-                            {
-                                role: 'user',
-                                content: [
-                                    { type: "text", text: prompt },
-                                    { type: "image_url", image_url: { url: canvasImage } }
-                                ]
-                            }
-                        ],
-                        model: 'llama-3.2-11b-vision-preview',
-                        temperature: 0.7,
-                        max_tokens: 3000,
-                        response_format: { type: 'json_object' }
-                    });
+            // if (canvasImage) {
+            //     try {
+            //         console.log('Attempting Vision Model...');
+            //         const visionCompletion = await groq.chat.completions.create({
+            //             messages: [
+            //                 {
+            //                     role: 'system',
+            //                     content: 'You are a supportive system design mentor. Always respond with valid JSON only, no additional text.'
+            //                 },
+            //                 {
+            //                     role: 'user',
+            //                     content: [
+            //                         { type: "text", text: prompt },
+            //                         { type: "image_url", image_url: { url: canvasImage } }
+            //                     ]
+            //                 }
+            //             ],
+            //             model: 'vision-model-here',
+            //             temperature: 0.7,
+            //             max_tokens: 3000,
+            //             response_format: { type: 'json_object' }
+            //         });
+            //
+            //         const responseText = visionCompletion.choices[0]?.message?.content;
+            //         if (responseText) return parseResponse(responseText);
+            //     } catch (visionError) {
+            //         console.warn('Vision model failed, falling back to text-only:', visionError.message);
+            //         // Fall through to text-only model
+            //     }
+            // }
 
-                    const responseText = visionCompletion.choices[0]?.message?.content;
-                    if (responseText) return parseResponse(responseText);
-                } catch (visionError) {
-                    console.warn('Vision model failed, falling back to text-only:', visionError.message);
-                    // Fall through to text-only model
-                }
-            }
-
-            // Text-only fallback (or primary if no image)
+            // Text-only model (currently the only option)
             console.log('Using Text Model (llama-3.3-70b-versatile)...');
             const completion = await groq.chat.completions.create({
                 messages: [

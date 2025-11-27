@@ -3766,5 +3766,173 @@ export const hldProblems = [
             "Root Scanner",
             "Generation Manager"
         ]
+    },
+    {
+        title: "Design a To-Do List App",
+        slug: "design-todo-app",
+        description: "Design a simple to-do list application that allows users to create, organize, and manage their tasks.",
+        difficulty: "Easy",
+        companies: ["Google", "Microsoft", "Apple"],
+        functional_requirements: [
+            "Create, update, and delete tasks.",
+            "Mark tasks as complete/incomplete.",
+            "Organize tasks into lists or categories.",
+            "Set due dates and reminders.",
+            "Search and filter tasks."
+        ],
+        non_functional_requirements: [
+            "Availability: High availability.",
+            "Latency: Fast CRUD operations.",
+            "Consistency: Strong consistency for task updates.",
+            "Sync: Real-time sync across devices."
+        ],
+        expected_components: [
+            "API Server",
+            "Database (SQL/NoSQL)",
+            "Notification Service",
+            "Sync Service",
+            "Mobile/Web Client",
+            "Cache (Redis)"
+        ]
+    },
+    {
+        title: "Design a Blogging Platform (WordPress)",
+        slug: "design-blogging-platform",
+        description: "Design a blogging platform where users can create, publish, and manage blog posts.",
+        difficulty: "Easy",
+        companies: ["Automattic", "Medium", "Ghost"],
+        functional_requirements: [
+            "Create and edit blog posts.",
+            "Publish posts with SEO-friendly URLs.",
+            "Categorize and tag posts.",
+            "Comment system.",
+            "User authentication and profiles."
+        ],
+        non_functional_requirements: [
+            "Availability: High availability for readers.",
+            "Performance: Fast page loads.",
+            "Scalability: Handle traffic spikes.",
+            "SEO: Search engine optimized."
+        ],
+        expected_components: [
+            "Web Server",
+            "Content Management System (CMS)",
+            "Database (MySQL/PostgreSQL)",
+            "Media Storage (S3)",
+            "CDN",
+            "Search Index (Elasticsearch)"
+        ]
+    },
+    {
+        title: "Design a Parking Lot System",
+        slug: "design-parking-lot",
+        description: "Design a parking lot management system that tracks vehicles, available spots, and payments.",
+        difficulty: "Easy",
+        companies: ["SpotHero", "ParkWhiz", "Cisco"],
+        functional_requirements: [
+            "Track vehicle entry and exit.",
+            "Allocate parking spots (Compact, Large, Handicapped).",
+            "Calculate parking fees based on duration.",
+            "Process payments.",
+            "Display available spots."
+        ],
+        non_functional_requirements: [
+            "Consistency: Accurate spot availability.",
+            "Reliability: No double allocation.",
+            "Performance: Fast entry/exit processing.",
+            "Availability: High uptime."
+        ],
+        expected_components: [
+            "Parking Management Service",
+            "Spot Allocation Algorithm",
+            "Payment Gateway",
+            "Database (ACID compliant)",
+            "Display Board Integration",
+            "Access Control (Gates/Sensors)"
+        ]
+    },
+    {
+        title: "Design an Image Hosting Service (Imgur)",
+        slug: "design-image-hosting",
+        description: "Design an image hosting and sharing service where users can upload, share, and embed images.",
+        difficulty: "Easy",
+        companies: ["Imgur", "Flickr", "Cloudinary"],
+        functional_requirements: [
+            "Upload images.",
+            "Generate shareable links.",
+            "Embed images on other websites.",
+            "View and download images.",
+            "Image compression and resizing."
+        ],
+        non_functional_requirements: [
+            "Availability: High availability.",
+            "Latency: Fast image loading.",
+            "Scalability: Handle millions of images.",
+            "Durability: No image loss."
+        ],
+        expected_components: [
+            "Upload Service",
+            "Image Processing Service",
+            "Object Storage (S3)",
+            "CDN",
+            "Database (Metadata)",
+            "API Gateway"
+        ]
+    },
+    {
+        title: "Design a QR Code Generator",
+        slug: "design-qr-code-generator",
+        description: "Design a service to generate QR codes with optional customization and tracking.",
+        difficulty: "Easy",
+        companies: ["Google", "Bitly", "QR Code Generator"],
+        functional_requirements: [
+            "Generate QR codes from URLs or text.",
+            "Customize QR code appearance (colors, logo).",
+            "Track scan analytics.",
+            "Download QR codes in various formats.",
+            "Create dynamic QR codes (editable destination)."
+        ],
+        non_functional_requirements: [
+            "Latency: Fast QR code generation.",
+            "Availability: High availability.",
+            "Scalability: Handle high request volume.",
+            "Tracking: Real-time analytics."
+        ],
+        expected_components: [
+            "QR Generation Service",
+            "URL Shortener (for dynamic codes)",
+            "Analytics Service",
+            "Database (URL mappings)",
+            "CDN (for QR images)",
+            "API Server"
+        ]
+    },
+    {
+        title: "Design a Poll/Voting System",
+        slug: "design-poll-system",
+        description: "Design a system to create polls, collect votes, and display results in real-time.",
+        difficulty: "Easy",
+        companies: ["Twitter", "Google Forms", "SurveyMonkey"],
+        functional_requirements: [
+            "Create polls with multiple options.",
+            "Vote on polls.",
+            "View real-time results.",
+            "Prevent duplicate voting.",
+            "Set poll expiration time."
+        ],
+        non_functional_requirements: [
+            "Consistency: Accurate vote counts.",
+            "Scalability: Handle viral polls.",
+            "Availability: High availability.",
+            "Security: Prevent vote manipulation."
+        ],
+        expected_components: [
+            "Poll Service",
+            "Vote Collection Service",
+            "Database (SQL/NoSQL)",
+            "Cache (Redis for vote counts)",
+            "WebSocket (Real-time updates)",
+            "Rate Limiter"
+        ]
     }
 ];
