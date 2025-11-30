@@ -20,6 +20,9 @@ import Course from './pages/Course';
 import CourseChapter from './pages/CourseChapter';
 import CsFundamentals from './pages/CsFundamentals';
 import CsQuiz from './pages/CsQuiz';
+import DsaDashboard from './pages/DsaDashboard';
+import AssessmentWorkspace from './pages/AssessmentWorkspace';
+import AssessmentSubmitted from './pages/AssessmentSubmitted';
 
 const HomePage = () => (
   <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-primary/20 selection:text-primary">
@@ -53,6 +56,9 @@ function App() {
           <Route path="/course/:chapterSlug" element={<CourseChapter />} />
           <Route path="/cs-fundamentals" element={<CsFundamentals />} />
           <Route path="/cs-fundamentals/:topicId" element={<CsQuiz />} />
+          <Route path="/dsa" element={<DsaDashboard />} />
+          <Route path="/dsa/assessment/:id" element={<AssessmentWorkspace />} />
+          <Route path="/assessment-submitted" element={<AssessmentSubmitted />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>

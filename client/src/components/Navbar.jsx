@@ -26,7 +26,7 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: 'DSA', href: '#dsa' },
+        { name: 'DSA', href: '/dsa', isRouterLink: true },
         { name: 'HLD', href: '/hld', isRouterLink: true },
         { name: 'LLD', href: '#lld' },
         { name: 'Frontend', href: '#frontend' },
