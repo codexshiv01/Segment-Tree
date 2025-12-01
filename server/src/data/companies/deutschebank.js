@@ -1,7 +1,7 @@
 export const deutschebankData = {
     id: 'deutschebank',
     name: 'Deutsche Bank',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Deutsche_Bank_logo.svg/1200px-Deutsche_Bank_logo.svg.png',
+    logo: 'https://d3pdqc0wehtytt.cloudfront.net/companies/79e70d43-a836-4c42-96d1-2531e8977209.svg',
     description: 'Practice real Deutsche Bank Online Assessment questions.',
     assessments: [{
         id: 'deutschebank-oa-1',
