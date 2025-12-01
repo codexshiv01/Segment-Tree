@@ -97,6 +97,8 @@ import { paloaltoData } from './companies/paloalto.js';
 import { coindcxData } from './companies/coindcx.js';
 import { redhatData } from './companies/redhat.js';
 import { eightfoldData } from './companies/eightfold.js';
+import { tcsData } from './companies/tcs.js';
+import { infosysData } from './companies/infosys.js';
 
 
 export const dsaData = {
@@ -199,6 +201,9 @@ export const dsaData = {
         paloaltoData,
         coindcxData,
         redhatData,
-        eightfoldData
+
+        eightfoldData,
+        tcsData,
+        infosysData
     ]
 };

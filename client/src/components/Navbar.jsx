@@ -27,6 +27,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Online Assessment', href: '/dsa', isRouterLink: true },
+        { name: 'Aptitude', href: '/aptitude', isRouterLink: true },
         { name: 'HLD', href: '/hld', isRouterLink: true },
         { name: 'LLD', href: '#lld' },
         { name: 'Frontend', href: '#frontend' },

@@ -23,6 +23,7 @@ import CsQuiz from './pages/CsQuiz';
 import DsaDashboard from './pages/DsaDashboard';
 import AssessmentWorkspace from './pages/AssessmentWorkspace';
 import AssessmentSubmitted from './pages/AssessmentSubmitted';
+import Aptitude from './pages/Aptitude';
 
 const HomePage = () => (
   <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-primary/20 selection:text-primary">
@@ -59,6 +60,7 @@ function App() {
           <Route path="/dsa" element={<DsaDashboard />} />
           <Route path="/dsa/assessment/:id" element={<AssessmentWorkspace />} />
           <Route path="/assessment-submitted" element={<AssessmentSubmitted />} />
+          <Route path="/aptitude" element={<Aptitude />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
