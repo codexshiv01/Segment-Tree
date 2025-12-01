@@ -11,7 +11,7 @@
             id: 'arbitrage-detect',
             title: 'Arbitrage Opportunity Detector',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 In foreign exchange markets, arbitrage is the practice of taking advantage of a price difference between two or more markets.
 
 You are given:

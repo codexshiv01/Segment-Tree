@@ -11,7 +11,7 @@ export const atlassianData = {
             id: 'jira-dependency',
             title: 'JIRA Task Dependency Resolver',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 In JIRA, tasks often have dependencies (e.g., Task A must be completed before Task B). To ensure a smooth workflow, we need to find a valid order to execute all tasks.
 
 You are given:
@@ -42,7 +42,11 @@ Return a valid ordering of tasks that satisfies all dependencies. If multiple va
                 { input: 'tasks = 3, dependencies = [[0,1],[0,2]]', judgeInput: '3\n2\n0 1\n0 2', output: '[0,1,2]' },
                 { input: 'tasks = 1, dependencies = []', judgeInput: '1\n0', output: '[0]' },
                 { input: 'tasks = 5, dependencies = [[0,1],[1,2],[3,4]]', judgeInput: '5\n3\n0 1\n1 2\n3 4', output: '[0,3,1,4,2]' },
-                { input: 'tasks = 3, dependencies = [[0,1],[1,2],[2,0]]', judgeInput: '3\n3\n0 1\n1 2\n2 0', output: '[]' }
+                { input: 'tasks = 3, dependencies = [[0,1],[1,2],[2,0]]', judgeInput: '3\n3\n0 1\n1 2\n2 0', output: '[]' },
+                { input: 'tasks = 6, dependencies = [[0,1],[0,2],[1,3],[2,3],[3,4],[3,5]]', judgeInput: '6\n6\n0 1\n0 2\n1 3\n2 3\n3 4\n3 5', output: '[0,1,2,3,4,5]' },
+                { input: 'tasks = 4, dependencies = [[1,0],[2,0],[3,1],[3,2]]', judgeInput: '4\n4\n1 0\n2 0\n3 1\n3 2', output: '[3,1,2,0]' },
+                { input: 'tasks = 5, dependencies = [[0,1],[1,2],[2,3],[3,4],[4,0]]', judgeInput: '5\n5\n0 1\n1 2\n2 3\n3 4\n4 0', output: '[]' },
+                { input: 'tasks = 7, dependencies = [[0,1],[0,2],[1,3],[2,4],[3,5],[4,5],[5,6]]', judgeInput: '7\n7\n0 1\n0 2\n1 3\n2 4\n3 5\n4 5\n5 6', output: '[0,1,2,3,4,5,6]' }
             ],
             starterCode: {
                 javascript: `/**
@@ -78,7 +82,7 @@ vector<int> taskOrder(int tasks, vector<vector<int>>& dependencies) {
             id: 'confluence-page-rank',
             title: 'Confluence Page Ranking Algorithm',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Confluence needs to rank pages based on their importance, similar to how search engines rank websites.
 
 You are given:

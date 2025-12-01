@@ -11,7 +11,7 @@
             id: 'portfolio-risk',
             title: 'Portfolio Risk Calculator',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 In investment banking, managing portfolio risk is crucial. You are given a list of potential stocks to invest in, each with a price and a volatility score.
 
 You are given:

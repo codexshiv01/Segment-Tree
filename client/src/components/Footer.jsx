@@ -16,7 +16,7 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                            Segment Tree
+                            ScaleMonk
                         </span>
                         <p className="text-slate-400 mt-4 leading-relaxed max-w-md">
                             The most advanced AI-powered interview preparation platform. Master System Design, DSA, and ace your next interview.
@@ -55,7 +55,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-400 text-sm">
-                        © {new Date().getFullYear()} Segment Tree. All rights reserved.
+                        © {new Date().getFullYear()} ScaleMonk. All rights reserved.
                     </p>
 
                     <div className="flex space-x-6">

@@ -11,7 +11,7 @@ export const accentureData = {
             id: 'resource-allocation',
             title: 'Project Resource Allocation',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Accenture needs to allocate consultants to projects based on their skills and project requirements. Each consultant has a skill level, and each project requires a minimum skill level.
 
 You are given:
@@ -84,7 +84,7 @@ int maxProjects(vector<int>& consultants, vector<int>& projects) {
             id: 'workflow-scheduler',
             title: 'Client Workflow Task Scheduler',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Accenture manages complex client workflows with dependencies between tasks. Given a set of tasks and their dependencies, determine if it's possible to complete all tasks and return a valid execution order.
 
 You are given:

@@ -11,7 +11,7 @@ export const intuitData = {
             id: 'tax-deduction-opt',
             title: 'TurboTax Deduction Optimizer',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Intuit's TurboTax aims to maximize a user's tax refund by selecting the best combination of deductions.
 
 You are given:
@@ -81,7 +81,7 @@ int maxDeductions(vector<vector<int>>& deductions, int max_categories) {
             id: 'quickbooks-reconcile',
             title: 'QuickBooks Transaction Reconciliation',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 QuickBooks needs to automatically reconcile bank transactions with internal book records.
 
 You are given:

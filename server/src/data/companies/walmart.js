@@ -11,7 +11,7 @@
             id: 'inventory-restock',
             title: 'Smart Inventory Restocking',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Walmart's inventory management system needs to decide which items to restock to maximize the number of days the store remains fully stocked, given a limited budget.
 
 You are given:
@@ -83,7 +83,7 @@ int maxStockDays(vector<vector<int>>& items, int budget) {
             id: 'supply-chain-graph',
             title: 'Supply Chain Optimization',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Walmart's supply chain is represented as a directed graph where nodes are warehouses and edges represent shipping routes with associated costs.
 
 You are given:

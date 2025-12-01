@@ -11,7 +11,7 @@
             id: 'fraud-pattern',
             title: 'Fraud Pattern Detector',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Visa's security systems monitor millions of transactions for suspicious activity. A common fraud pattern involves a sequence of transactions that rapidly exceeds a certain threshold.
 
 You are given:
@@ -82,7 +82,7 @@ int detectFraud(vector<vector<int>>& txns, int threshold) {
             id: 'cross-border-graph',
             title: 'Cross-Border Transaction Graph',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Visa processes cross-border transactions involving currency conversions. We need to find the best conversion path between two currencies to maximize the final amount.
 
 You are given:

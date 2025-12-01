@@ -11,7 +11,7 @@ export const samsungData = {
             id: 'smart-tv-channel',
             title: 'Smart TV Channel Recommendation',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Samsung's Smart TV uses AI to recommend channels based on viewing patterns. Given a user's watch history, we need to find the most frequently watched channels within specific time windows.
 
 You are given:
@@ -90,7 +90,7 @@ vector<vector<int>> recommendChannels(vector<vector<int>>& history, int window) 
             id: 'display-defect-pattern',
             title: 'Display Panel Defect Pattern Detection',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Samsung's quality control system analyzes display panels for defect patterns. A defect pattern is defined as a rectangular region where all pixels have brightness below a threshold.
 
 You are given:

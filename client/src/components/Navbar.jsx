@@ -26,7 +26,7 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: 'DSA', href: '/dsa', isRouterLink: true },
+        { name: 'Online Assessment', href: '/dsa', isRouterLink: true },
         { name: 'HLD', href: '/hld', isRouterLink: true },
         { name: 'LLD', href: '#lld' },
         { name: 'Frontend', href: '#frontend' },
@@ -47,7 +47,7 @@ const Navbar = () => {
                     <Link to="/" className="flex-shrink-0 flex items-center cursor-pointer group">
                         <div className="relative">
                             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
-                                Segment Tree
+                                ScaleMonk
                             </span>
                             <div className="absolute -inset-2 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
                         </div>

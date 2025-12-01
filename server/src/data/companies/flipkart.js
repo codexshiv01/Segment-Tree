@@ -13,7 +13,7 @@ export const flipkartData = {
                     id: 'warehouse-allocation',
                     title: 'Warehouse Inventory Allocation',
                     difficulty: 'Medium',
-                    description: `### Problem Description
+                    description: `Problem Description
 Flipkart's supply chain optimization involves minimizing logistics costs while ensuring customer satisfaction. In this problem, you are tasked with allocating inventory from multiple warehouses to various regional hubs to meet demand at the lowest possible shipping cost.
 
 You are given:
@@ -190,7 +190,7 @@ public class Main {
                     id: 'flash-sale-scheduler',
                     title: 'Flash Sale Priority Scheduler',
                     difficulty: 'Hard',
-                    description: `### Problem Description
+                    description: `Problem Description
 During the Big Billion Days sale, millions of transactions happen every second. We need to schedule "Flash Deals" to maximize profit without overlapping time slots.
 
 You are given a list of \`deals\`, where \`deals[i] = [start_time, end_time, profit]\`.

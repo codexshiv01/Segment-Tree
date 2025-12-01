@@ -5,7 +5,7 @@ const reviews = [
     {
         name: "Aarav Patel",
         role: "SDE II at Google",
-        content: "Segment Tree was the game changer for my LLD preparation. The AI feedback is incredibly accurate and helped me identify edge cases I would have missed.",
+        content: "ScaleMonk was the game changer for my LLD preparation. The AI feedback is incredibly accurate and helped me identify edge cases I would have missed.",
         rating: 5,
         image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=faces"
     },
@@ -77,7 +77,7 @@ const Testimonials = () => {
                         Loved by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Thousands</span>
                     </h2>
                     <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-                        Join the community of engineers who have transformed their careers with Segment Tree.
+                        Join the community of engineers who have transformed their careers with ScaleMonk.
                     </p>
                 </div>
 

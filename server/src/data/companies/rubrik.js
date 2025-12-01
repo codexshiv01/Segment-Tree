@@ -11,7 +11,7 @@ export const rubrikData = {
             id: 'backup-dedup',
             title: 'Backup Data Deduplication',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Rubrik's backup system uses deduplication to save storage space. Given a list of data blocks with their hash values, identify which blocks are duplicates.
 
 You are given:
@@ -81,7 +81,7 @@ long long calculateDedupSavings(vector<vector<int>>& blocks) {
             id: 'snapshot-retention',
             title: 'Snapshot Retention Policy Optimizer',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Rubrik maintains snapshots of data with different retention policies. Given a list of snapshots, determine which snapshots to delete to meet storage constraints while maximizing data retention.
 
 You are given:

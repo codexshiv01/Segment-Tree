@@ -11,7 +11,7 @@
             id: 'social-sentiment',
             title: 'Social Media Sentiment Aggregator',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Sprinklr aggregates social media posts from various platforms to analyze brand sentiment.
 
 You are given:
@@ -47,7 +47,11 @@ Return the **IDs of the top k platforms** with the highest weighted sentiment, s
                 { input: 'posts = [[1,5,100],[2,5,200]], k = 1', judgeInput: '2\n1 5 100\n2 5 200\n1', output: '[2]' },
                 { input: 'posts = [[1,3,50],[2,4,50],[3,5,50]], k = 2', judgeInput: '3\n1 3 50\n2 4 50\n3 5 50\n2', output: '[3,2]' },
                 { input: 'posts = [[5,10,1000]], k = 1', judgeInput: '1\n5 10 1000\n1', output: '[5]' },
-                { input: 'posts = [[1,2,100],[2,3,100],[3,4,100]], k = 3', judgeInput: '3\n1 2 100\n2 3 100\n3 4 100\n3', output: '[3,2,1]' }
+                { input: 'posts = [[1,2,100],[2,3,100],[3,4,100]], k = 3', judgeInput: '3\n1 2 100\n2 3 100\n3 4 100\n3', output: '[3,2,1]' },
+                { input: 'posts = [[1,8,200],[2,7,150],[3,6,100]], k = 2', judgeInput: '3\n1 8 200\n2 7 150\n3 6 100\n2', output: '[1,2]' },
+                { input: 'posts = [[1,5,100],[1,3,200],[2,5,150]], k = 1', judgeInput: '3\n1 5 100\n1 3 200\n2 5 150\n1', output: '[1]' },
+                { input: 'posts = [[1,10,50],[2,10,100],[3,10,150]], k = 2', judgeInput: '3\n1 10 50\n2 10 100\n3 10 150\n2', output: '[3,2]' },
+                { input: 'posts = [[1,4,80],[2,6,60],[3,5,70],[4,7,50]], k = 3', judgeInput: '4\n1 4 80\n2 6 60\n3 5 70\n4 7 50\n3', output: '[2,3,1]' }
             ],
             starterCode: {
                 javascript: `/**
@@ -84,7 +88,7 @@ vector<int> topPlatforms(vector<vector<int>>& posts, int k) {
             id: 'distributed-cache',
             title: 'Distributed Cache Consistency',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Sprinklr's distributed system uses a cache to store real-time data. To maintain consistency, we need to invalidate cache entries across multiple nodes when data changes.
 
 You are given:

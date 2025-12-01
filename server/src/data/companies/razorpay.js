@@ -11,7 +11,7 @@ export const razorpayData = {
             id: 'payment-gateway-throttle',
             title: 'Payment Gateway Rate Limiter',
             difficulty: 'Medium',
-            description: `### Problem Description
+            description: `Problem Description
 Razorpay's payment gateway needs to prevent abuse by rate-limiting requests from merchants. Each merchant has a quota of requests allowed per time window.
 
 You are given:
@@ -91,7 +91,7 @@ vector<bool> rateLimit(vector<vector<int>>& requests, int quota, int window_size
             id: 'settlement-batch-optimizer',
             title: 'Payment Settlement Batch Optimizer',
             difficulty: 'Hard',
-            description: `### Problem Description
+            description: `Problem Description
 Razorpay settles payments to merchants in batches to minimize transaction fees. Each settlement has a fixed cost plus a per-payment cost.
 
 You are given:
