@@ -9,14 +9,14 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white pt-16 pb-8">
+        <footer className="bg-slate-950 border-t border-white/5 text-white pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
                     {/* Brand Section */}
                     <div className="lg:col-span-2">
                         <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                            Segment Tree
+                            ScaleMonk
                         </span>
                         <p className="text-slate-400 mt-4 leading-relaxed max-w-md">
                             The most advanced AI-powered interview preparation platform. Master System Design, DSA, and ace your next interview.
@@ -55,7 +55,7 @@ const Footer = () => {
                 {/* Bottom Section */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-slate-400 text-sm">
-                        © {new Date().getFullYear()} Segment Tree. All rights reserved.
+                        © {new Date().getFullYear()} ScaleMonk. All rights reserved.
                     </p>
 
                     <div className="flex space-x-6">

@@ -127,6 +127,29 @@ class APIService {
         const response = await fetch(`${API_URL}/hld/discussions/${id}`);
         return await response.json();
     }
+
+    // DSA Methods
+    static async getDsaCompanies() {
+        const response = await fetch(`${API_URL}/dsa/companies`);
+        return await response.json();
+    }
+
+    static async getDsaAssessment(id) {
+        const response = await fetch(`${API_URL}/dsa/assessments/${id}`);
+        return await response.json();
+    }
+
+    static async runDsaCode(token, { language, code, problemId }) {
+        const response = await fetch(`${API_URL}/dsa/run`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ language, code, problemId })
+        });
+        return await response.json();
+    }
 }
 
 export default APIService;

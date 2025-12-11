@@ -44,7 +44,7 @@ const Register = () => {
                 <div className="max-w-md w-full">
                     <div className="text-center mb-8">
                         <h2 className="text-4xl font-bold text-slate-900 mb-2">Create Account</h2>
-                        <p className="text-slate-600">Join Segment Tree and start your journey</p>
+                        <p className="text-slate-600">Join ScaleMonk and start your journey</p>
                     </div>
 
                     <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">

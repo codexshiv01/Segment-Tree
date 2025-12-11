@@ -1,0 +1,5 @@
+{
+  "language": "javascript",
+  "code": "function merge(intervals) { return intervals; }",
+  "problemId": "merge-intervals"
+}

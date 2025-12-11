@@ -5,8 +5,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Footer from './components/Footer';
-import Overview from './components/Overview';
-import TrustedBy from './components/TrustedBy';
+
+
 import Testimonials from './components/Testimonials';
 import LearningPath from './components/LearningPath';
 import Stats from './components/Stats';
@@ -20,14 +20,18 @@ import Course from './pages/Course';
 import CourseChapter from './pages/CourseChapter';
 import CsFundamentals from './pages/CsFundamentals';
 import CsQuiz from './pages/CsQuiz';
+import DsaDashboard from './pages/DsaDashboard';
+import AssessmentWorkspace from './pages/AssessmentWorkspace';
+import AssessmentSubmitted from './pages/AssessmentSubmitted';
+import Aptitude from './pages/Aptitude';
 
 const HomePage = () => (
-  <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-primary/20 selection:text-primary">
+  <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-primary/20 selection:text-primary">
     <Navbar />
     <main>
       <Hero />
-      <TrustedBy />
-      <Overview />
+
+
       <Stats />
       <LearningPath />
       <Features />
@@ -53,6 +57,10 @@ function App() {
           <Route path="/course/:chapterSlug" element={<CourseChapter />} />
           <Route path="/cs-fundamentals" element={<CsFundamentals />} />
           <Route path="/cs-fundamentals/:topicId" element={<CsQuiz />} />
+          <Route path="/dsa" element={<DsaDashboard />} />
+          <Route path="/dsa/assessment/:id" element={<AssessmentWorkspace />} />
+          <Route path="/assessment-submitted" element={<AssessmentSubmitted />} />
+          <Route path="/aptitude" element={<Aptitude />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>

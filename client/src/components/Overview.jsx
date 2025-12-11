@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import oldHeroImage from '../assets/hero_illustration.png';
+import overviewGraph from '../assets/overview-graph.png';
 
 const Overview = () => {
     return (
@@ -19,23 +19,10 @@ const Overview = () => {
                         <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-3xl blur-2xl opacity-50" />
                         <div className="glass-card bg-white/10 border-white/10 rounded-2xl p-4 relative transform hover:scale-[1.02] transition-transform duration-500">
                             <img
-                                src={oldHeroImage}
+                                src={overviewGraph}
                                 alt="System Design Architecture"
                                 className="rounded-xl w-full h-auto shadow-2xl"
                             />
-
-                            {/* Floating Badge */}
-                            <div className="absolute -bottom-6 -right-6 bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-700 animate-float-delayed">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 font-bold">
-                                        98%
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-slate-400 font-medium">Success Rate</p>
-                                        <p className="text-white font-bold">In Top Companies</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 

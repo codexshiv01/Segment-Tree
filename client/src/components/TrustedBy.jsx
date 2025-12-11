@@ -12,25 +12,23 @@ const companies = [
 
 const TrustedBy = () => {
     return (
-        <div className="py-20 bg-slate-50 relative overflow-hidden">
+        <div className="py-20 bg-slate-950 relative overflow-hidden">
             {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900" />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <p className="text-center text-sm font-bold text-slate-600 uppercase tracking-widest mb-12">
-                    Trusted by engineers at
-                </p>
-                <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24">
-                    {companies.map((company) => (
-                        <div key={company.name} className="group relative">
-                            <img
-                                src={`https://logo.clearbit.com/${company.domain}`}
-                                alt={`${company.name} Logo`}
-                                className="h-10 md:h-12 w-auto object-contain opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
-                            />
-                        </div>
-                    ))}
-                </div>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                {companies.map((company) => (
+                    <div key={company.name} className="bg-white/90 p-4 rounded-xl shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 transform cursor-default">
+                        <img
+                            src={`https://logo.clearbit.com/${company.domain}`}
+                            alt={`${company.name} Logo`}
+                            className="h-6 md:h-8 w-auto object-contain"
+                            onError={(e) => {
+                                e.target.src = `https://ui-avatars.com/api/?name=${company.name}&background=random`
+                            }}
+                        />
+                    </div>
+                ))}
             </div>
         </div>
     );
