@@ -64,17 +64,17 @@ const Testimonials = () => {
     };
 
     return (
-        <div className="py-24 bg-[#0B1120] relative overflow-hidden text-white">
+        <div className="py-24 bg-slate-950 relative overflow-hidden text-white">
             {/* Vibrant Background Gradients */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px]" />
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px]" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        Loved by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Thousands</span>
+                        Loved by <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Indian Engineers</span>
                     </h2>
                     <p className="text-lg text-slate-400 max-w-2xl mx-auto">
                         Join the community of engineers who have transformed their careers with ScaleMonk.
@@ -84,11 +84,11 @@ const Testimonials = () => {
                 <div className="max-w-5xl mx-auto relative">
                     {/* Main Card */}
                     <div
-                        className="glass-card bg-white/5 border-white/10 p-8 md:p-16 rounded-[2.5rem] relative min-h-[350px] flex flex-col justify-center transition-all duration-500 backdrop-blur-xl shadow-2xl"
+                        className="glass-card bg-slate-900/50 border border-white/5 p-8 md:p-16 rounded-[2.5rem] relative min-h-[350px] flex flex-col justify-center transition-all duration-500 backdrop-blur-xl shadow-2xl"
                         onMouseEnter={() => setIsAutoPlaying(false)}
                         onMouseLeave={() => setIsAutoPlaying(true)}
                     >
-                        <Quote className="text-primary/40 absolute top-10 left-10" size={80} />
+                        <Quote className="text-primary/20 absolute top-10 left-10" size={80} />
 
                         <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
                             {/* User Image */}
@@ -97,7 +97,7 @@ const Testimonials = () => {
                                     <img
                                         src={reviews[currentIndex].image}
                                         alt={reviews[currentIndex].name}
-                                        className="w-full h-full rounded-full object-cover border-4 border-[#0B1120]"
+                                        className="w-full h-full rounded-full object-cover border-4 border-slate-900"
                                     />
                                 </div>
                             </div>
@@ -125,13 +125,13 @@ const Testimonials = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute top-1/2 -left-4 md:-left-16 transform -translate-y-1/2 p-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full text-white transition-all backdrop-blur-md"
+                        className="absolute top-1/2 -left-4 md:-left-16 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full text-white transition-all backdrop-blur-md"
                     >
                         <ChevronLeft size={28} />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute top-1/2 -right-4 md:-right-16 transform -translate-y-1/2 p-4 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full text-white transition-all backdrop-blur-md"
+                        className="absolute top-1/2 -right-4 md:-right-16 transform -translate-y-1/2 p-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full text-white transition-all backdrop-blur-md"
                     >
                         <ChevronRight size={28} />
                     </button>

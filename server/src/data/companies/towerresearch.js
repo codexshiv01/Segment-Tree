@@ -163,5 +163,232 @@ double minRoutingCost(vector<vector<int>>& venues, int volume, int urgency) {
                 java: `import java.util.*;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        int n = sc.nextInt();\n        int[][] venues = new int[n][3];\n        for(int i=0; i<n; i++) {\n            venues[i][0] = sc.nextInt();\n            venues[i][1] = sc.nextInt();\n            venues[i][2] = sc.nextInt();\n        }\n        int volume = sc.nextInt();\n        int urgency = sc.nextInt();\n        Solution sol = new Solution();\n        System.out.printf("%.2f\\n", sol.minRoutingCost(venues, volume, urgency));\n    }\n}`
             }
         }]
+    }, {
+        id: 'towerresearch-oa-2',
+        title: 'Tower Research OA-2',
+        duration: 180,
+        problems: [
+            {
+                id: 'hf-network-topology',
+                title: 'High-Frequency Network Topology',
+                difficulty: 'Hard',
+                description: `Tower Research Capital is designing a new ultra-low latency network to connect its trading servers to various exchanges.
+You are given a map of N possible server locations (nodes) and M potential fiber optic links (edges) connecting them. Each link has a latency L[i] and a construction cost C[i].
+
+There are K "Exchange" nodes that must be connected to at least one "Data Center" node. You are given the indices of the Exchange nodes and the Data Center nodes.
+Your goal is to select a subset of links to build such that:
+1. Every Exchange node is connected to at least one Data Center node.
+2. The maximum latency from any Exchange node to its nearest Data Center node in the built network is minimized.
+3. Subject to minimizing the maximum latency, the total construction cost is minimized.
+
+Return a pair of integers: [Minimum Max Latency, Minimum Total Cost].
+If it's impossible to connect all exchanges to a data center, return [-1, -1].
+
+Input Format:
+- First line: N, M.
+- Next M lines: u, v, L, C (link between u and v with latency L and cost C).
+- Next line: Number of Exchanges (N_E), followed by N_E integers (indices of exchanges).
+- Next line: Number of Data Centers (N_D), followed by N_D integers (indices of data centers).
+
+Output Format:
+- Print two space-separated integers: Min Max Latency and Min Total Cost.
+
+Constraints:
+- 1 <= N <= 1000
+- 1 <= M <= 5000
+- 1 <= L, C <= 10^9
+`,
+                examples: [
+                    {
+                        input: '5 5\n1 2 10 100\n2 3 10 100\n3 4 10 100\n4 5 10 100\n1 5 50 500\n2 2 3\n1 1',
+                        output: '20 200'
+                    },
+                    {
+                        input: '3 2\n1 2 10 100\n2 3 20 200\n1 3\n1 1',
+                        output: '30 300'
+                    }
+                ],
+                testCases: [
+                    {
+                        input: '5 5\n1 2 10 100\n2 3 10 100\n3 4 10 100\n4 5 10 100\n1 5 50 500\n2 2 3\n1 1',
+                        judgeInput: '5 5\n1 2 10 100\n2 3 10 100\n3 4 10 100\n4 5 10 100\n1 5 50 500\n2 2 3\n1 1',
+                        output: '20 200'
+                    },
+                    {
+                        input: '3 2\n1 2 10 100\n2 3 20 200\n1 3\n1 1',
+                        judgeInput: '3 2\n1 2 10 100\n2 3 20 200\n1 3\n1 1',
+                        output: '30 300'
+                    },
+                    {
+                        input: '4 3\n1 2 10 10\n3 4 10 10\n2 3 100 1000\n2 1 4\n2 2 3',
+                        judgeInput: '4 3\n1 2 10 10\n3 4 10 10\n2 3 100 1000\n2 1 4\n2 2 3',
+                        output: '10 20'
+                    },
+                    {
+                        input: '2 0\n1 2\n1 1',
+                        judgeInput: '2 0\n1 2\n1 1',
+                        output: '-1 -1'
+                    },
+                    {
+                        input: '2 1\n1 2 10 100\n1 2\n1 1',
+                        judgeInput: '2 1\n1 2 10 100\n1 2\n1 1',
+                        output: '10 100'
+                    },
+                    {
+                        input: '3 2\n1 2 10 100\n2 3 10 100\n2 2 3\n1 1',
+                        judgeInput: '3 2\n1 2 10 100\n2 3 10 100\n2 2 3\n1 1',
+                        output: '20 200'
+                    },
+                    {
+                        input: '3 3\n1 2 100 10\n2 3 100 10\n1 3 50 100\n1 3\n1 1',
+                        judgeInput: '3 3\n1 2 100 10\n2 3 100 10\n1 3 50 100\n1 3\n1 1',
+                        output: '50 100'
+                    },
+                    {
+                        input: '4 3\n1 2 10 100\n2 3 10 100\n3 4 10 100\n1 4\n1 1',
+                        judgeInput: '4 3\n1 2 10 100\n2 3 10 100\n3 4 10 100\n1 4\n1 1',
+                        output: '30 300'
+                    },
+                    {
+                        input: '5 4\n1 2 10 10\n1 3 10 10\n1 4 10 10\n1 5 10 10\n4 2 3 4 5\n1 1',
+                        judgeInput: '5 4\n1 2 10 10\n1 3 10 10\n1 4 10 10\n1 5 10 10\n4 2 3 4 5\n1 1',
+                        output: '10 40'
+                    },
+                    {
+                        input: '3 3\n1 2 1 1000\n2 3 1 1000\n1 3 10 1\n1 3\n1 1',
+                        judgeInput: '3 3\n1 2 1 1000\n2 3 1 1000\n1 3 10 1\n1 3\n1 1',
+                        output: '2 2000'
+                    },
+                    {
+                        input: '2 1\n1 2 10 10\n1 1\n1 2',
+                        judgeInput: '2 1\n1 2 10 10\n1 1\n1 2',
+                        output: '10 10'
+                    },
+                    {
+                        input: '2 1\n1 2 10 10\n1 2\n1 2',
+                        judgeInput: '2 1\n1 2 10 10\n1 2\n1 2',
+                        output: '0 0'
+                    }
+                ],
+                starterCode: {
+                    javascript: `/**
+ * @param {number} n
+ * @param {number[][]} edges
+ * @param {number[]} exchanges
+ * @param {number[]} dataCenters
+ * @return {number[]}
+ */
+function optimizeNetwork(n, edges, exchanges, dataCenters) {
+    // Your code here
+}`,
+                    python: `def optimize_network(n, edges, exchanges, data_centers):
+    """
+    :type n: int
+    :type edges: List[List[int]]
+    :type exchanges: List[int]
+    :type data_centers: List[int]
+    :rtype: List[int]
+    """
+    # Your code here
+    pass`,
+                    cpp: `#include <vector>
+using namespace std;
+
+vector<long long> optimizeNetwork(int n, vector<vector<int>>& edges, vector<int>& exchanges, vector<int>& dataCenters) {
+    // Your code here
+}`,
+                    java: `import java.util.*;
+
+public class Solution {
+    public long[] optimizeNetwork(int n, int[][] edges, int[] exchanges, int[] dataCenters) {
+        // Your code here
+    }
+}`
+                },
+                driverCode: {
+                    javascript: `
+const readline = require('readline');
+const rl = readline.createInterface({ input: process.stdin });
+
+let lines = [];
+rl.on('line', (line) => lines.push(line));
+rl.on('close', () => {
+    const [n, m] = lines[0].split(' ').map(Number);
+    const edges = [];
+    for (let i = 1; i <= m; i++) {
+        edges.push(lines[i].split(' ').map(Number));
+    }
+    const exchanges = lines[m+1].split(' ').slice(1).map(Number);
+    const dataCenters = lines[m+2].split(' ').slice(1).map(Number);
+    console.log(optimizeNetwork(n, edges, exchanges, dataCenters).join(' '));
+});`,
+                    python: `
+import sys
+lines = sys.stdin.read().strip().split('\\n')
+n, m = map(int, lines[0].split())
+edges = []
+for i in range(1, m + 1):
+    edges.append(list(map(int, lines[i].split())))
+exchanges = list(map(int, lines[m+1].split()))[1:]
+data_centers = list(map(int, lines[m+2].split()))[1:]
+result = optimize_network(n, edges, exchanges, data_centers)
+print(f"{result[0]} {result[1]}")`,
+                    cpp: `
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<long long> optimizeNetwork(int n, vector<vector<int>>& edges, vector<int>& exchanges, vector<int>& dataCenters);
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<int>> edges(m, vector<int>(4));
+    for (int i = 0; i < m; i++) {
+        cin >> edges[i][0] >> edges[i][1] >> edges[i][2] >> edges[i][3];
+    }
+    int ne;
+    cin >> ne;
+    vector<int> exchanges(ne);
+    for (int i = 0; i < ne; i++) cin >> exchanges[i];
+    int nd;
+    cin >> nd;
+    vector<int> dataCenters(nd);
+    for (int i = 0; i < nd; i++) cin >> dataCenters[i];
+    
+    vector<long long> result = optimizeNetwork(n, edges, exchanges, dataCenters);
+    cout << result[0] << " " << result[1] << endl;
+    return 0;
+}`,
+                    java: `
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] edges = new int[m][4];
+        for (int i = 0; i < m; i++) {
+            edges[i][0] = sc.nextInt();
+            edges[i][1] = sc.nextInt();
+            edges[i][2] = sc.nextInt();
+            edges[i][3] = sc.nextInt();
+        }
+        int ne = sc.nextInt();
+        int[] exchanges = new int[ne];
+        for (int i = 0; i < ne; i++) exchanges[i] = sc.nextInt();
+        int nd = sc.nextInt();
+        int[] dataCenters = new int[nd];
+        for (int i = 0; i < nd; i++) dataCenters[i] = sc.nextInt();
+        
+        Solution sol = new Solution();
+        long[] result = sol.optimizeNetwork(n, edges, exchanges, dataCenters);
+        System.out.println(result[0] + " " + result[1]);
+    }
+}`
+                }
+            }
+        ]
     }]
 };

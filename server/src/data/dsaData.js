@@ -99,6 +99,12 @@ import { redhatData } from './companies/redhat.js';
 import { eightfoldData } from './companies/eightfold.js';
 import { tcsData } from './companies/tcs.js';
 import { infosysData } from './companies/infosys.js';
+import { hrtData } from './companies/hrt.js';
+import { quadeyeData } from './companies/quadeye.js';
+import { optiverData } from './companies/optiver.js';
+import { autodeskData } from './companies/autodesk.js';
+import { targetData } from './companies/target.js';
+
 
 
 export const dsaData = {
@@ -204,6 +210,12 @@ export const dsaData = {
 
         eightfoldData,
         tcsData,
-        infosysData
+        infosysData,
+        hrtData,
+        quadeyeData,
+        optiverData,
+        autodeskData,
+        targetData
+
     ]
 };
