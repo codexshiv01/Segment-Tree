@@ -5,6 +5,7 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import hldRoutes from './routes/hld.js';
 import dsaRoutes from './routes/dsa.js';
+import lldRoutes from './routes/lldRoutes.js';
 import pool from './config/database.js';
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/hld', hldRoutes);
 app.use('/api/dsa', dsaRoutes);
+app.use('/api/lld', lldRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

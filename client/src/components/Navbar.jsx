@@ -29,7 +29,7 @@ const Navbar = () => {
         { name: 'Online Assessment', href: '/dsa', isRouterLink: true },
         { name: 'Aptitude', href: '/aptitude', isRouterLink: true },
         { name: 'HLD', href: '/hld', isRouterLink: true },
-        { name: 'LLD', href: '#lld' },
+        { name: 'LLD', href: '/lld', isRouterLink: true },
         { name: 'Frontend', href: '#frontend' },
         { name: 'AI Mock Interview', href: '#mock-interview' },
         { name: 'DB Design', href: '#db-design' },

@@ -24,6 +24,9 @@ import DsaDashboard from './pages/DsaDashboard';
 import AssessmentWorkspace from './pages/AssessmentWorkspace';
 import AssessmentSubmitted from './pages/AssessmentSubmitted';
 import Aptitude from './pages/Aptitude';
+import LldList from './pages/LldList';
+import LldWorkspace from './pages/LldWorkspace';
+import ScrollReveal from './components/ScrollReveal';
 
 const HomePage = () => (
   <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-primary/20 selection:text-primary">
@@ -31,11 +34,21 @@ const HomePage = () => (
     <main>
       <Hero />
 
+      <ScrollReveal>
+        <Stats />
+      </ScrollReveal>
 
-      <Stats />
-      <LearningPath />
-      <Features />
-      <Testimonials />
+      <ScrollReveal>
+        <LearningPath />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Features />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Testimonials />
+      </ScrollReveal>
     </main>
     <Footer />
   </div>
@@ -61,6 +74,8 @@ function App() {
           <Route path="/dsa/assessment/:id" element={<AssessmentWorkspace />} />
           <Route path="/assessment-submitted" element={<AssessmentSubmitted />} />
           <Route path="/aptitude" element={<Aptitude />} />
+          <Route path="/lld" element={<LldList />} />
+          <Route path="/lld/:slug" element={<LldWorkspace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code, Database, Server, Cloud, Trophy, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const steps = [
     {
@@ -16,7 +17,8 @@ const steps = [
         desc: "Learn object-oriented design patterns and schema design.",
         color: "text-purple-500",
         bg: "bg-purple-500/10",
-        border: "group-hover:border-purple-500/50"
+        border: "group-hover:border-purple-500/50",
+        link: "/lld"
     },
     {
         icon: Server,
@@ -70,7 +72,7 @@ const LearningPath = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
                         {steps.map((step, index) => (
-                            <div key={index} className="group relative">
+                            <Link key={index} to={step.link || '#'} className="group relative block">
                                 <div className={`bg-slate-900 p-6 rounded-2xl border border-slate-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center relative z-10 ${step.border} hover:border-opacity-50 hover:bg-slate-800`}>
                                     <div className={`w-16 h-16 rounded-2xl ${step.bg} ${step.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm border border-white/5`}>
                                         <step.icon size={32} />
@@ -88,7 +90,7 @@ const LearningPath = () => {
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-slate-800 text-white rounded-full flex items-center justify-center font-bold text-sm border-4 border-slate-950 z-20 shadow-md group-hover:scale-110 transition-transform group-hover:bg-primary">
                                     {index + 1}
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
